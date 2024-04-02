@@ -13,23 +13,21 @@
     
     <!--- Seo Part-->
     
-    <link rel="canonical" href="http://example.com/2024/03/02/linux/ubuntu键位修改/"/>
+    <link rel="canonical" href="http://example.com/2024/03/21/tmux常用命令/"/>
     <meta name="robots" content="index,follow">
     <meta name="googlebot" content="index,follow">
     <meta name="revisit-after" content="1 days">
     
-        <meta name="description" content="演示交换大写锁定键caps_lock和esc。 Linux: 使用xmodmap参考  xmodmap修改keycode到keysyms的映射关系。keycode对应编码物理按键，keysyms是按键翻译成什么功能。参考Linux下的keycode与keysyms  1234xmodmap -pke # 查看键位xmodmap -pm # 查看功能键xmodmap -g # 查看语法xmodmap">
+        <meta name="description" content="基本思想工作流服务server &gt; 会话session &gt; 窗口window &gt; 窗格pane 首次使用tmux命令会启动一个server，之后所有工作都是和这个server交流。 窗口window是一个tab页面，这个页面可以分成好几个不同的格子pane。需要分屏看的东西就在一个window中完成。注意，每个pane新打开时都会单开一个shell，各shell相互独立。 一个w">
 <meta property="og:type" content="article">
-<meta property="og:title" content="ubuntu键位修改">
-<meta property="og:url" content="http://example.com/2024/03/02/linux/ubuntu%E9%94%AE%E4%BD%8D%E4%BF%AE%E6%94%B9/index.html">
+<meta property="og:title" content="tmux常用命令">
+<meta property="og:url" content="http://example.com/2024/03/21/tmux%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="演示交换大写锁定键caps_lock和esc。 Linux: 使用xmodmap参考  xmodmap修改keycode到keysyms的映射关系。keycode对应编码物理按键，keysyms是按键翻译成什么功能。参考Linux下的keycode与keysyms  1234xmodmap -pke # 查看键位xmodmap -pm # 查看功能键xmodmap -g # 查看语法xmodmap">
+<meta property="og:description" content="基本思想工作流服务server &gt; 会话session &gt; 窗口window &gt; 窗格pane 首次使用tmux命令会启动一个server，之后所有工作都是和这个server交流。 窗口window是一个tab页面，这个页面可以分成好几个不同的格子pane。需要分屏看的东西就在一个window中完成。注意，每个pane新打开时都会单开一个shell，各shell相互独立。 一个w">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2024-03-02T06:39:52.000Z">
-<meta property="article:modified_time" content="2024-04-02T14:33:38.630Z">
+<meta property="article:published_time" content="2024-03-21T13:55:16.000Z">
+<meta property="article:modified_time" content="2024-03-22T04:07:13.483Z">
 <meta property="article:author" content="John Doe">
-<meta property="article:tag" content="教程">
-<meta property="article:tag" content="tool-operation">
 <meta name="twitter:card" content="summary">
     
     
@@ -42,7 +40,7 @@
     
     <title>
         
-            ubuntu键位修改 -
+            tmux常用命令 -
         
         Endless Daydream&#39;s Blog
     </title>
@@ -412,7 +410,7 @@
         <div class="article-title relative w-full">
             
                 <div class="w-full flex items-center pt-6 justify-start">
-                    <h1 class="article-title-regular text-second-text-color text-4xl md:text-6xl font-bold px-2 sm:px-6 md:px-8 py-3">ubuntu键位修改</h1>
+                    <h1 class="article-title-regular text-second-text-color text-4xl md:text-6xl font-bold px-2 sm:px-6 md:px-8 py-3">tmux常用命令</h1>
                 </div>
             
             </div>
@@ -433,35 +431,20 @@
                         <div class="article-meta-info">
     <span class="article-date article-meta-item">
         <i class="fa-regular fa-pen-fancy"></i>&nbsp;
-        <span class="desktop">2024-03-02 14:39:52</span>
-        <span class="mobile">2024-03-02 14:39:52</span>
+        <span class="desktop">2024-03-21 21:55:16</span>
+        <span class="mobile">2024-03-21 21:55:16</span>
         <span class="hover-info">Created</span>
     </span>
     
         <span class="article-date article-meta-item">
             <i class="fa-regular fa-wrench"></i>&nbsp;
-            <span class="desktop">2024-04-02 22:33:38</span>
-            <span class="mobile">2024-04-02 22:33:38</span>
+            <span class="desktop">2024-03-22 12:07:13</span>
+            <span class="mobile">2024-03-22 12:07:13</span>
             <span class="hover-info">Updated</span>
         </span>
     
 
     
-    
-        <span class="article-tags article-meta-item">
-            <i class="fa-regular fa-tags"></i>&nbsp;
-            <ul>
-                
-                    <li>
-                        <a href="/tags/%E6%95%99%E7%A8%8B/">教程</a>&nbsp;
-                    </li>
-                
-                    <li>
-                        | <a href="/tags/tool-operation/">tool-operation</a>&nbsp;
-                    </li>
-                
-            </ul>
-        </span>
     
 
     
@@ -483,25 +466,154 @@
 
 
         <div class="article-content markdown-body px-2 sm:px-6 md:px-8 pb-8">
-            <p>演示交换大写锁定键caps_lock和esc。</p>
-<h3 id="Linux-使用xmodmap"><a href="#Linux-使用xmodmap" class="headerlink" title="Linux: 使用xmodmap"></a>Linux: 使用xmodmap</h3><p><a class="link"   target="_blank" rel="noopener" href="https://www.cnblogs.com/yinheyi/p/10146901.html" >参考 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
-<p>xmodmap修改keycode到keysyms的映射关系。keycode对应编码物理按键，keysyms是按键翻译成什么功能。参考<a class="link"   target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/423502840" >Linux下的keycode与keysyms <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
-<div class="highlight-container" data-rel="Sh"><figure class="iseeu highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">xmodmap -pke <span class="comment"># 查看键位</span></span><br><span class="line">xmodmap -pm <span class="comment"># 查看功能键</span></span><br><span class="line">xmodmap -g <span class="comment"># 查看语法</span></span><br><span class="line">xmodmap -e <span class="string">&quot;clear lock&quot;</span> <span class="comment"># 执行一条指令</span></span><br></pre></td></tr></table></figure></div>
-
-<p>创建~&#x2F;.Xmodmap, “!”表示注释：</p>
-<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">clear lock</span><br><span class="line">keycode 66 = Escape NoSymbol Escape</span><br><span class="line">keycode 9 = Caps_Lock NoSymbol Caps_Lock</span><br><span class="line">add lock = Caps_Lock</span><br></pre></td></tr></table></figure></div>
-
-<p>使用：</p>
-<div class="highlight-container" data-rel="Sh"><figure class="iseeu highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">xmodmap ~/.Xmodmap</span><br></pre></td></tr></table></figure></div>
-
-<p>一开始调如果键盘不自带大写锁定灯，可能不容易发现问题，可以安装一个键盘回显软件帮助调试，比如screenkey。</p>
-<p>修改.bashrc使得每次启动生效，加入：</p>
-<div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[[ -f ~/.Xmodmap ]] &amp;&amp; xmodmap ~/.Xmodmap &amp;&gt;/dev/null</span><br></pre></td></tr></table></figure></div>
-
-<p>但这会导致打开CLI窗口可能两行xmodmap命令，据说要写在~&#x2F;.xinitrc里，现在还没整出来。</p>
-<h4 id="vscode中上述调整不生效"><a href="#vscode中上述调整不生效" class="headerlink" title="vscode中上述调整不生效"></a>vscode中上述调整不生效</h4><p>ctrl+,打开设置找到Keyboard Dispatch，将选项从code改为keyCode即可</p>
-<h4 id="个人配置"><a href="#个人配置" class="headerlink" title="个人配置"></a>个人配置</h4><p>Capslock &lt;-&gt; Escape<br>Left Ctrl &lt;-&gt; Left Alt</p>
-<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">! swap Escape and Caps_lock</span><br><span class="line">clear lock</span><br><span class="line">keycode 66 = Escape NoSymbol Escape</span><br><span class="line">keycode 9 = Caps_Lock NoSymbol Caps_Lock</span><br><span class="line">add lock = Caps_Lock</span><br><span class="line"></span><br><span class="line">! swap left Ctrl and left Alt</span><br><span class="line">remove mod1 = Alt_L</span><br><span class="line">remove control = Control_L</span><br><span class="line">keycode 64 = Control_L NoSymbol Control_L</span><br><span class="line">keycode 37 = Alt_L NoSymbol Alt_L</span><br><span class="line">add mod1 = Alt_L</span><br><span class="line">add control = Control_L</span><br><span class="line"></span><br></pre></td></tr></table></figure></div>
+            <h1 id="基本思想"><a href="#基本思想" class="headerlink" title="基本思想"></a>基本思想</h1><h2 id="工作流"><a href="#工作流" class="headerlink" title="工作流"></a>工作流</h2><p>服务server &gt; 会话session &gt; 窗口window &gt; 窗格pane</p>
+<p>首次使用tmux命令会启动一个server，之后所有工作都是和这个server交流。</p>
+<p>窗口window是一个tab页面，这个页面可以分成好几个不同的格子pane。需要分屏看的东西就在一个window中完成。注意，每个pane新打开时都会单开一个shell，各shell相互独立。</p>
+<p>一个window中的pane可以有多种不同的布局，可以临时最大化再缩小，可以轮换、移动布局。你可以形成一个习惯的窗口布局模式，例如左半屏放代码，右边上半屏放笔记&#x2F;文本文档，下半屏调试&#x2F;运行。</p>
+<p>当你需要临时去打开某个东西，比如看看某个依赖的库的问题时，肯定不希望破坏现在的打码布局。你可以新开一个window来完成。</p>
+<p>所以带着不同的短期的目的，你可以形成好几种习惯的布局：敲代码的、查找资料的、改配置的…</p>
+<p>而这些短期目的都属于同一件工作中的内容，对应了多个window同属于一个session。</p>
+<p>因此当临时接到和正在进行的事情无关的新工作时，适合打开一个新的session来处理。</p>
+<p>以上是我对tmux工作模式的理解。</p>
+<h2 id="模式"><a href="#模式" class="headerlink" title="模式"></a>模式</h2><p>这一节不是说工作模式的思想，而是tmux中，除了可以当成普通shell使用的正常模式之外，还有一个用于浏览、复制终端输出的copy mode。这个模式下可以用emacs或者vi的方式浏览shell历史输出，选择复制，粘贴。这一定程度上解决了终端输出不能直接copy的问题。</p>
+<p>详细的介绍留到后面。</p>
+<h2 id="优势"><a href="#优势" class="headerlink" title="优势"></a>优势</h2><p>ssh连接到远程服务器上时，tmux的server只要不关闭，那么断开连接后明天再连接可以接着之前的进度做，所有布局都保持原样。</p>
+<h1 id="命令"><a href="#命令" class="headerlink" title="命令"></a>命令</h1><h1 id="快捷键"><a href="#快捷键" class="headerlink" title="快捷键"></a>快捷键</h1><p>快捷键极大加快了window和pane间切换的速度，这是工作流畅的基础。有些默认设置不舒服，可以自定义快捷键映射。</p>
+<p>以下快捷键默认要先按prefix键，这个键默认是<code>Ctrl-b</code>。</p>
+<p>基本功能：</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>会话(session)</th>
+<th>窗口(window)</th>
+<th>窗格(pane)</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>切换上一个</td>
+<td><code>(</code></td>
+<td><code>p</code></td>
+<td></td>
+</tr>
+<tr>
+<td>切换下一个</td>
+<td><code>)</code></td>
+<td><code>n</code></td>
+<td><code>o</code></td>
+</tr>
+<tr>
+<td>其他切换</td>
+<td></td>
+<td><code>0..9</code>：根据数字切换</td>
+<td><code>;</code>：切换到上一次的窗格</td>
+</tr>
+</tbody></table>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>会话(session)</th>
+<th>窗口(window)</th>
+<th>窗格(pane)</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>新建</td>
+<td><code>:new</code>：使用tmux命令，也要先按prefix</td>
+<td><code>c</code></td>
+<td><code>%</code>：垂直分割 <code>&quot;</code>：水平分割</td>
+</tr>
+<tr>
+<td>重命名</td>
+<td><code>$</code></td>
+<td><code>,</code></td>
+<td>—</td>
+</tr>
+<tr>
+<td>查找</td>
+<td><code>s</code>：列出所有</td>
+<td><code>f</code></td>
+<td>—</td>
+</tr>
+<tr>
+<td>关闭</td>
+<td><code>d</code>：分离当前会话</td>
+<td><code>&amp;</code>：关闭当前窗口</td>
+<td><code>x</code></td>
+</tr>
+</tbody></table>
+<p>注：</p>
+<ol>
+<li>冒号命令本质是进入tmux的命令行模式，使用tmux命令。</li>
+<li>session没有关闭快捷键，这是一种安全手段。因为一般一个工作流程用一个session，不会轻易关闭。但如果你把session当window用，可以像这样：</li>
+</ol>
+<ul>
+<li>关闭当前session: <code>:kill-session</code></li>
+<li>关闭除当前以外所有session: <code>:kill-session -a</code></li>
+</ul>
+<p>独有功能：</p>
+<table>
+<thead>
+<tr>
+<th>窗口</th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>l</code></td>
+<td>切换到最后一个窗口*</td>
+</tr>
+</tbody></table>
+<table>
+<thead>
+<tr>
+<th>窗格(pane)</th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>z</code></td>
+<td>最大化&#x2F;正常大小 切换。</td>
+</tr>
+<tr>
+<td><code>&#123;</code></td>
+<td>与上一个窗格交换位置</td>
+</tr>
+<tr>
+<td><code>&#125;</code></td>
+<td>与下一个窗格交换位置</td>
+</tr>
+<tr>
+<td><code>!</code></td>
+<td>将当前窗格(pane)拆分为独立窗口(window)</td>
+</tr>
+<tr>
+<td><code>&lt;space&gt;</code></td>
+<td>改变布局模式。</td>
+</tr>
+<tr>
+<td><code>&lt;C-o&gt;</code></td>
+<td>轮换窗格布局：0号窗格移到最后一个，其余前移。焦点保持在当前窗格。</td>
+</tr>
+<tr>
+<td><code>&lt;M-o&gt;</code></td>
+<td>轮换窗格布局：轮换方向与<code>&lt;C-o&gt;</code>相反。焦点保持在当前窗格。</td>
+</tr>
+<tr>
+<td><code>&lt;C-方向键&gt;</code></td>
+<td>调整窗格大小。</td>
+</tr>
+</tbody></table>
+<h2 id="更多快捷键帮助"><a href="#更多快捷键帮助" class="headerlink" title="更多快捷键帮助"></a>更多快捷键帮助</h2><p>阅读<code>man tmux</code>，就在前几页列出了所有默认快捷键配置。</p>
+<p>使用中可以<code>prefix ?</code>查看其中的一些</p>
+<h1 id="copy-mode"><a href="#copy-mode" class="headerlink" title="copy mode"></a>copy mode</h1><h2 id="粘贴到系统剪贴板"><a href="#粘贴到系统剪贴板" class="headerlink" title="粘贴到系统剪贴板"></a>粘贴到系统剪贴板</h2><p>没错，复制的内容默认是不在系统剪贴板的。</p>
+<p>需要下载命令行工具xsel或xclip，它们将输入放到系统剪贴板。通常的用法是管道接住其他命令的输出。</p>
+<p>tmux重新映射copy mode的复制键为 管道输出到xsel&#x2F;xclip 即可。</p>
+<p>具体可见<a href="">todo</a></p>
+<h2 id="ssh远程连接"><a href="#ssh远程连接" class="headerlink" title="ssh远程连接"></a>ssh远程连接</h2><p>对于ssh有额外的问题：只复制到了远程的系统剪贴板，没复制到本地。这是另外一个话题，详见 <a href="">todo</a>。</p>
+<h1 id="配置文件"><a href="#配置文件" class="headerlink" title="配置文件"></a>配置文件</h1><p>默认是<code>~/.tmux.conf</code></p>
+<p>在tmux中修改了配置，要应用，用<code>:source ~/.tmux.conf</code></p>
 
         </div>
 
@@ -509,18 +621,18 @@
             <div class="post-copyright-info w-full my-8 px-2 sm:px-6 md:px-8">
                 <div class="article-copyright-info-container">
     <ul>
-        <li><strong>Title:</strong> ubuntu键位修改</li>
+        <li><strong>Title:</strong> tmux常用命令</li>
         <li><strong>Author:</strong> Endless_daydream</li>
         <li><strong>Created at
-                :</strong> 2024-03-02 14:39:52</li>
+                :</strong> 2024-03-21 21:55:16</li>
         
             <li>
                 <strong>Updated at
-                    :</strong> 2024-04-02 22:33:38
+                    :</strong> 2024-03-22 12:07:13
             </li>
         
         <li>
-            <strong>Link:</strong> https://endless_daydream.gitee.io/2024/03/02/linux/ubuntu键位修改/
+            <strong>Link:</strong> https://endless_daydream.gitee.io/2024/03/21/tmux常用命令/
         </li>
         <li>
             <strong>
@@ -539,18 +651,6 @@
         
 
         
-            <ul class="post-tags-box text-lg mt-1.5 flex-wrap justify-center flex md:hidden">
-                
-                    <li class="tag-item mx-0.5">
-                        <a href="/tags/%E6%95%99%E7%A8%8B/">#教程</a>&nbsp;
-                    </li>
-                
-                    <li class="tag-item mx-0.5">
-                        <a href="/tags/tool-operation/">#tool-operation</a>&nbsp;
-                    </li>
-                
-            </ul>
-        
 
         
 
@@ -560,18 +660,33 @@
                     <div class="article-prev border-border-color shadow-redefine-flat shadow-shadow-color-2 rounded-medium px-4 py-2 hover:shadow-redefine-flat-hover hover:shadow-shadow-color-2">
                         <a class="prev"
                         rel="prev"
-                        href="/2024/03/02/blog/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E8%AE%B0%E5%BD%95/"
+                        href="/2024/03/22/gdb/"
                         >
                             <span class="left arrow-icon flex justify-center items-center">
                                 <i class="fa-solid fa-chevron-left"></i>
                             </span>
                             <span class="title flex justify-center items-center">
-                                <span class="post-nav-title-item">博客搭建记录</span>
+                                <span class="post-nav-title-item">gdb常用命令</span>
                                 <span class="post-nav-item">Prev posts</span>
                             </span>
                         </a>
                     </div>
                 
+                
+                    <div class="article-next border-border-color shadow-redefine-flat shadow-shadow-color-2 rounded-medium px-4 py-2 hover:shadow-redefine-flat-hover hover:shadow-shadow-color-2">
+                        <a class="next"
+                        rel="next"
+                        href="/2024/03/16/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E8%89%BA%E6%9C%AF%E7%AC%94%E8%AE%B0%EF%BC%9A%E7%AC%AC%E4%B8%80%E7%AB%A0/"
+                        >
+                            <span class="title flex justify-center items-center">
+                                <span class="post-nav-title-item">计算机程序设计艺术笔记：第一章</span>
+                                <span class="post-nav-item">Next posts</span>
+                            </span>
+                            <span class="right arrow-icon flex justify-center items-center">
+                                <i class="fa-solid fa-chevron-right"></i>
+                            </span>
+                        </a>
+                    </div>
                 
             </div>
         
@@ -627,8 +742,8 @@
             <div class="post-toc-wrap">
     <div class="post-toc">
         <div class="toc-title">On this page</div>
-        <div class="page-title">ubuntu键位修改</div>
-        <ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Linux-%E4%BD%BF%E7%94%A8xmodmap"><span class="nav-text">Linux: 使用xmodmap</span></a></li></ol>
+        <div class="page-title">tmux常用命令</div>
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E6%80%9D%E6%83%B3"><span class="nav-text">基本思想</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B7%A5%E4%BD%9C%E6%B5%81"><span class="nav-text">工作流</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A8%A1%E5%BC%8F"><span class="nav-text">模式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BC%98%E5%8A%BF"><span class="nav-text">优势</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%91%BD%E4%BB%A4"><span class="nav-text">命令</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%BF%AB%E6%8D%B7%E9%94%AE"><span class="nav-text">快捷键</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9B%B4%E5%A4%9A%E5%BF%AB%E6%8D%B7%E9%94%AE%E5%B8%AE%E5%8A%A9"><span class="nav-text">更多快捷键帮助</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#copy-mode"><span class="nav-text">copy mode</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%B2%98%E8%B4%B4%E5%88%B0%E7%B3%BB%E7%BB%9F%E5%89%AA%E8%B4%B4%E6%9D%BF"><span class="nav-text">粘贴到系统剪贴板</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ssh%E8%BF%9C%E7%A8%8B%E8%BF%9E%E6%8E%A5"><span class="nav-text">ssh远程连接</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6"><span class="nav-text">配置文件</span></a></li></ol>
 
     </div>
 </div>
