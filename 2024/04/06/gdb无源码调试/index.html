@@ -13,16 +13,20 @@
     
     <!--- Seo Part-->
     
-    <link rel="canonical" href="http://example.com/categories/vscode/"/>
+    <link rel="canonical" href="http://example.com/2024/04/06/gdb无源码调试/"/>
     <meta name="robots" content="index,follow">
     <meta name="googlebot" content="index,follow">
     <meta name="revisit-after" content="1 days">
     
-        <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://example.com/categories/vscode/index.html">
+        <meta name="description" content="首先尝试获取源码文件的信息，如果能找到在哪里是最好。  查看源代码文件名和编译目录 1info source  输出类似这样： 12345678(gdb) info sourceCurrent source file is &#x2F;mnt&#x2F;d&#x2F;cpp&#x2F;main.cppCompilation directory is &#x2F;mnt&#x2F;dSource language is c++.Producer is GNU">
+<meta property="og:type" content="article">
+<meta property="og:title" content="gdb无源码调试">
+<meta property="og:url" content="http://example.com/2024/04/06/gdb%E6%97%A0%E6%BA%90%E7%A0%81%E8%B0%83%E8%AF%95/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="首先尝试获取源码文件的信息，如果能找到在哪里是最好。  查看源代码文件名和编译目录 1info source  输出类似这样： 12345678(gdb) info sourceCurrent source file is &#x2F;mnt&#x2F;d&#x2F;cpp&#x2F;main.cppCompilation directory is &#x2F;mnt&#x2F;dSource language is c++.Producer is GNU">
 <meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2024-04-06T14:44:23.000Z">
+<meta property="article:modified_time" content="2024-04-06T15:53:54.359Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
     
@@ -36,7 +40,7 @@
     
     <title>
         
-            Category: vscode -
+            gdb无源码调试 -
         
         Endless Daydream&#39;s Blog
     </title>
@@ -400,44 +404,260 @@
             <div class="main-content">
 
                 
-                    <div class="category-container">
-    <div class="category-name">
-        <i class="fa-solid fa-folder"></i>&nbsp;vscode
-    </div>
-    <div class="category-post-list">
+                    <div class="post-page-container flex relative justify-between box-border w-full h-full">
+    <div class="article-content-container">
+
+        <div class="article-title relative w-full">
+            
+                <div class="w-full flex items-center pt-6 justify-start">
+                    <h1 class="article-title-regular text-second-text-color text-4xl md:text-6xl font-bold px-2 sm:px-6 md:px-8 py-3">gdb无源码调试</h1>
+                </div>
+            
+            </div>
+
+        
+            <div class="article-header flex flex-row gap-2 items-center px-2 sm:px-6 md:px-8">
+                <div class="avatar w-[46px] h-[46px] flex-shrink-0 rounded-medium border border-border-color p-[1px]">
+                    <img src="/images/redefine-avatar.svg">
+                </div>
+                <div class="info flex flex-col justify-between">
+                    <div class="author flex items-center">
+                        <span class="name text-default-text-color text-lg font-semibold">Endless_daydream</span>
+                        
+                            <span class="author-label ml-1.5 text-xs px-2 py-0.5 rounded-small text-third-text-color border border-shadow-color-1">Lv3</span>
+                        
+                    </div>
+                    <div class="meta-info">
+                        <div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fa-regular fa-pen-fancy"></i>&nbsp;
+        <span class="desktop">2024-04-06 22:44:23</span>
+        <span class="mobile">2024-04-06 22:44:23</span>
+        <span class="hover-info">Created</span>
+    </span>
+    
+        <span class="article-date article-meta-item">
+            <i class="fa-regular fa-wrench"></i>&nbsp;
+            <span class="desktop">2024-04-06 23:53:54</span>
+            <span class="mobile">2024-04-06 23:53:54</span>
+            <span class="hover-info">Updated</span>
+        </span>
+    
+
+    
+    
+
+    
+    
+    
+    
+        <span class="article-pv article-meta-item">
+            <i class="fa-regular fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>
+        </span>
+    
+</div>
+
+                    </div>
+                </div>
+            </div>
         
 
-<div class="archive-list-container">
-    
-        <section class="archive-item mb-spacing-unit last:mb-0">
-            <div class="archive-item-header flex flex-row items-center mb-2">
-                <span class="archive-year font-semibold text-3xl mr-2">2024</span>
-                <span class="archive-year-post-count text-xs md:text-sm font-bold rounded-small bg-third-background-color py-[2px] px-[10px] border border-border-color">1</span>
+        
+
+
+        <div class="article-content markdown-body px-2 sm:px-6 md:px-8 pb-8">
+            <p>首先尝试获取源码文件的信息，如果能找到在哪里是最好。</p>
+<ol>
+<li><p>查看源代码文件名和编译目录</p>
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">info source</span><br></pre></td></tr></table></figure></div>
+
+<p>输出类似这样：</p>
+<div class="highlight-container" data-rel="Sh"><figure class="iseeu highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">(gdb) info <span class="built_in">source</span></span><br><span class="line">Current <span class="built_in">source</span> file is /mnt/d/cpp/main.cpp</span><br><span class="line">Compilation directory is /mnt/d</span><br><span class="line">Source language is c++.</span><br><span class="line">Producer is GNU C++ 5.4.0 20160609 -mtune=generic -march=x86-64 -g -fstack-protector-strong.</span><br><span class="line">Compiled with DWARF 2 debugging format.</span><br><span class="line">Does not include preprocessor macro info.</span><br><span class="line">(gdb)</span><br></pre></td></tr></table></figure></div>
+
+<p>这些是在编译的时候记录在二进制文件里的。<br>由此可知编译的时候，源文件路径为<code>/mnt/d/cpp/main.cpp</code>，编译目录为<code>/mnt/d</code>。<br>但有可能之后移动过，源码不在那里了。</p>
+</li>
+<li><p>查看源码搜索路径</p>
+<p>如果找到了源码，要把源码目录加入搜索路径，使用</p>
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dir your/path/to/code</span><br></pre></td></tr></table></figure></div>
+
+<p>附：</p>
+<p>gdb搜索源码的原理：</p>
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">show dir</span><br></pre></td></tr></table></figure></div>
+
+<p>默认情况输出如下</p>
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Source directories searched: $cdir:$cwd</span><br></pre></td></tr></table></figure></div>
+
+<p>其中的$cdir就是上面的<code>/mnt/d</code>。$cwd就是当前工作目录，可以用gdb的cd命令改变。因此现在有两个搜索目录。假设再加入我们设定的目录&#x2F;abc</p>
+<p>按上面的源码路径<code>/mnt/d/cpp/main.cpp</code>，将会搜索以下路径的文件</p>
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">/mnt/d/cpp/main.cpp</span><br><span class="line"></span><br><span class="line">$cdir/mnt/d/cpp/main.cpp</span><br><span class="line">$cwd/mnt/d/cpp/main.cpp</span><br><span class="line">/abc/mnt/d/cpp/main.cpp</span><br><span class="line"></span><br><span class="line">$cdir/main.cpp</span><br><span class="line">$cwd/main.cpp</span><br><span class="line">/abc/main.cpp</span><br></pre></td></tr></table></figure></div></li>
+</ol>
+<p>只有带调试信息的可执行文件。</p>
+<table>
+<thead>
+<tr>
+<th>命令</th>
+<th>功能</th>
+<th>命令完整形式</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>i locals</td>
+<td>查看函数局部变量名</td>
+<td>info locals</td>
+</tr>
+<tr>
+<td>i var</td>
+<td>查看全局变量名</td>
+<td>info variables</td>
+</tr>
+<tr>
+<td>i line [number] | [addr]</td>
+<td>查看指定行号&#x2F;地址的汇编信息，会打印所在函数名</td>
+<td>info line</td>
+</tr>
+<tr>
+<td>pt VAR</td>
+<td>查看变量名所属类型的定义</td>
+<td>ptype VAR</td>
+</tr>
+<tr>
+<td>wha EXP</td>
+<td>查看表达式类型，相比ptype的输出更简单</td>
+<td>whatis EXP</td>
+</tr>
+<tr>
+<td>bt</td>
+<td>查看栈信息，查看入参的值</td>
+<td>breaktrace</td>
+</tr>
+</tbody></table>
+<p>善用print</p>
+<div class="highlight-container" data-rel="Sh"><figure class="iseeu highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">p sizeof(var/type) <span class="comment"># 查看变量/类型所占内存大小</span></span><br><span class="line">p/x <span class="variable">$rbp</span>-<span class="variable">$rsp</span> <span class="comment"># 查看当前栈大小</span></span><br><span class="line"><span class="built_in">printf</span> <span class="string">&quot;%d\n&quot;</span>, var <span class="comment"># 调用printf输出格式</span></span><br></pre></td></tr></table></figure></div>
+
+
+
+<p>参考：</p>
+<p><a class="link"   target="_blank" rel="noopener" href="https://blog.csdn.net/albertsh/article/details/107437084" >gdb调试解决找不到源代码的问题 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+
+        </div>
+
+        
+            <div class="post-copyright-info w-full my-8 px-2 sm:px-6 md:px-8">
+                <div class="article-copyright-info-container">
+    <ul>
+        <li><strong>Title:</strong> gdb无源码调试</li>
+        <li><strong>Author:</strong> Endless_daydream</li>
+        <li><strong>Created at
+                :</strong> 2024-04-06 22:44:23</li>
+        
+            <li>
+                <strong>Updated at
+                    :</strong> 2024-04-06 23:53:54
+            </li>
+        
+        <li>
+            <strong>Link:</strong> https://endless_daydream.gitee.io/2024/04/06/gdb无源码调试/
+        </li>
+        <li>
+            <strong>
+                License:
+            </strong>
+            
+
+            
+                This work is licensed under <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0">CC BY-NC-SA 4.0</a>.
+            
+        </li>
+    </ul>
+</div>
+
             </div>
-            <ul class="article-list pl-0 md:pl-8 text-lg leading-[1.5]">
-              
+        
+
+        
+
+        
+
+        
+            <div class="article-nav my-8 flex justify-between items-center px-2 sm:px-6 md:px-8">
                 
-                    
-                    <li class="article-item space-y-2 px-6 pt-10 pb-2 text-xl relative border-l-2 border-border-color" date-is='03-05'>
                 
-                    
-                        <a href="/2024/03/05/vscode/vscode-vim-ctrl%E7%BB%84%E5%90%88%E9%94%AE%E6%98%A0%E5%B0%84/" class="block overflow-hidden w-fit">
-                            <span class="article-title mb-0.5 text-2xl">vscode vim ctrl组合键映射</span>
+                    <div class="article-next border-border-color shadow-redefine-flat shadow-shadow-color-2 rounded-medium px-4 py-2 hover:shadow-redefine-flat-hover hover:shadow-shadow-color-2">
+                        <a class="next"
+                        rel="next"
+                        href="/2024/04/06/%E4%B8%AA%E4%BA%BAtmux%E9%85%8D%E7%BD%AE/"
+                        >
+                            <span class="title flex justify-center items-center">
+                                <span class="post-nav-title-item">个人tmux配置</span>
+                                <span class="post-nav-item">Next posts</span>
+                            </span>
+                            <span class="right arrow-icon flex justify-center items-center">
+                                <i class="fa-solid fa-chevron-right"></i>
+                            </span>
                         </a>
-                    
-              
-            </ul>
-        </section>
+                    </div>
+                
+            </div>
+        
+
+
+        
+            <div class="comment-container px-2 sm:px-6 md:px-8 pb-8">
+                <div class="comments-container mt-10 w-full ">
+    <div id="comment-anchor" class="w-full h-2.5"></div>
+    <div class="comment-area-title w-full my-1.5 md:my-2.5 text-xl md:text-3xl font-bold">
+        Comments
+    </div>
+    
+
+        
+            
+    <div id="waline"></div>
+    <script type="module" data-swup-reload-script>
+      import { init } from '/js/libs/waline.mjs';
+
+      function loadWaline() {
+        init({
+          el: '#waline',
+          serverURL: 'https://example.example.com',
+          lang: 'zh-CN',
+          dark: 'body[class~="dark-mode"]',
+          requiredMeta: ['nick', 'mail'],
+          emoji: [],
+          recaptchaV3Key: "wasd",
+          
+        });
+      }
+
+      if (typeof swup !== 'undefined') {
+        loadWaline();
+      } else {
+        window.addEventListener('DOMContentLoaded', loadWaline);
+      }
+    </script>
+
+
+
+        
     
 </div>
+
+            </div>
+        
+    </div>
+
+    
+        <div class="toc-content-container">
+            <div class="post-toc-wrap">
+    <div class="post-toc">
+        <div class="toc-title">On this page</div>
+        <div class="page-title">gdb无源码调试</div>
+        
 
     </div>
 </div>
-<div class="category-paginator">
-    <div class="paginator">
-    <span class="page-number current">1</span>
-</div>
-
+        </div>
+    
 </div>
 
 
@@ -522,6 +742,27 @@
         </div>
     </div>
 
+    
+        <div class="post-tools">
+            <div class="post-tools-container">
+    <ul class="article-tools-list">
+        <!-- TOC aside toggle -->
+        
+            <li class="right-bottom-tools page-aside-toggle">
+                <i class="fa-regular fa-outdent"></i>
+            </li>
+        
+
+        <!-- go comment -->
+        
+            <li class="go-comment">
+                <i class="fa-regular fa-comments"></i>
+            </li>
+        
+    </ul>
+</div>
+
+        </div>
     
 
     <div class="right-side-tools-container">

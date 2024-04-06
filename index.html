@@ -547,7 +547,7 @@ mjx-container[display="true"] + br {
         <div class="label text-third-text-color text-sm">Categories</div>
     </a>
     <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/archives">
-        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">22</div>
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">23</div>
         <div class="label text-third-text-color text-sm">Posts</div>
     </a>
 </div>
@@ -616,7 +616,7 @@ mjx-container[display="true"] + br {
         <div class="label text-third-text-color text-sm">Categories</div>
     </a>
     <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/archives">
-        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">22</div>
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">23</div>
         <div class="label text-third-text-color text-sm">Posts</div>
     </a>
 </div>
@@ -633,6 +633,51 @@ mjx-container[display="true"] + br {
                 
                     <div class="home-content-container">
     <ul class="home-article-list">
+        
+            <li class="home-article-item">
+
+                
+
+                
+
+                
+                <div class="flex flex-col gap-5 px-7 pb-7 pt-7">
+                    <h3 class="home-article-title">
+                        <a href="/2024/04/06/gdb%E6%97%A0%E6%BA%90%E7%A0%81%E8%B0%83%E8%AF%95/">
+                            gdb无源码调试
+                        </a>
+                    </h3>
+
+                    <div class="home-article-content markdown-body">
+                        
+                            首先尝试获取源码文件的信息，如果能找到在哪里是最好。
+
+查看源代码文件名和编译目录
+1info source
+
+输出类似这样：
+12345678(gdb) info sourceCurrent source file is /mnt/d/cpp/ma...
+                        
+                    </div>
+
+                    <div class="home-article-meta-info-container">
+    <div class="home-article-meta-info">
+        <span><i class="fa-solid fa-calendars"></i>&nbsp;
+            <span class="home-article-date" data-date="Sat Apr 06 2024 22:44:23 GMT+0800">
+                
+                    2024-04-06
+                
+            </span>
+        </span>
+        
+        
+    </div>
+
+    <a href="/2024/04/06/gdb%E6%97%A0%E6%BA%90%E7%A0%81%E8%B0%83%E8%AF%95/">Read more<span class="seo-reader-text">gdb无源码调试</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
+</div>
+
+                </div>
+            </li>
         
             <li class="home-article-item">
 
@@ -782,9 +827,26 @@ mjx-container[display="true"] + br {
 
                     <div class="home-article-content markdown-body">
                         
-                            基本调试运行gdb ./xx.out启动对xx.out的调试。如果单用gdb而没有指定文件，在gdb中运行 attach xx.out 载入文件。
-h(elp) [cmd]: 查看相应gdb命令的帮助信息，可以使用简写。
-r(un): 进入调试后，程...
+                            基本调试命令行运行
+1gdb ./xx.out
+
+启动对可执行文件xx.out的调试
+
+
+
+命令
+功能
+命令完整形式
+
+
+
+h [cmd]
+查看相应gdb命令的帮助信息，可以使用简写。
+help
+
+
+r
+进入调试后，程序不会直接开始运行，使用run指...
                         
                     </div>
 
@@ -1111,75 +1173,6 @@ double
                 </div>
             </li>
         
-            <li class="home-article-item">
-
-                
-
-                
-
-                
-                <div class="flex flex-col gap-5 px-7 pb-7 pt-7">
-                    <h3 class="home-article-title">
-                        <a href="/2024/03/05/vscode/vscode-vim-ctrl%E7%BB%84%E5%90%88%E9%94%AE%E6%98%A0%E5%B0%84/">
-                            vscode vim ctrl组合键映射
-                        </a>
-                    </h3>
-
-                    <div class="home-article-content markdown-body">
-                        
-                            遇到了直接配置vim.normalModeKeyBindings不生效，仍然是vscode原生快捷键的问题，解决方式如下：
-以“把insert mode的ctrl+f和ctrl+b分别映射到左右方向键”为例：
-首先在设置(ctrl+,)搜索vim u...
-                        
-                    </div>
-
-                    <div class="home-article-meta-info-container">
-    <div class="home-article-meta-info">
-        <span><i class="fa-solid fa-calendars"></i>&nbsp;
-            <span class="home-article-date" data-date="Tue Mar 05 2024 21:05:45 GMT+0800">
-                
-                    2024-03-05
-                
-            </span>
-        </span>
-        
-            <span class="home-article-category">
-                <i class="fa-solid fa-folders"></i>&nbsp;
-            <ul>
-                
-                
-                    
-                        
-                        <li>
-                            <a href="/categories/vscode/">vscode</a>&nbsp;
-                        </li>
-                    
-                    
-                
-            </ul>
-        </span>
-        
-        
-            <span class="home-article-tag">
-                <i class="fa-solid fa-tags"></i>&nbsp;
-                <ul>
-                    
-                        <li>
-                            
-                            <a href="/tags/tool-operation/">tool-operation</a>&nbsp;
-                        </li>
-                    
-                </ul>
-            </span>
-        
-    </div>
-
-    <a href="/2024/03/05/vscode/vscode-vim-ctrl%E7%BB%84%E5%90%88%E9%94%AE%E6%98%A0%E5%B0%84/">Read more<span class="seo-reader-text">vscode vim ctrl组合键映射</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
-</div>
-
-                </div>
-            </li>
-        
     </ul>
 
     <div class="home-paginator px-7 py-5">
@@ -1214,7 +1207,7 @@ double
                 
                 <p class="post-count space-x-0.5">
                     <span>
-                        22 posts in total
+                        23 posts in total
                     </span>
                     
                 </p>
