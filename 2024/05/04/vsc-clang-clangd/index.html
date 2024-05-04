@@ -26,7 +26,7 @@
 <meta property="og:description" content="环境：ubuntu22.04 clang是LLVM团队出的编译器，clangd是lsp。据说更好用，慕名而来尝试。 安装1sudo apt install clang  clangd原本也是apt安装的15版，在vscode上运行效果不好。现在是vscode先装clangd插件，然后重开vscode会提示没有clangd，通过提示安装的18版，不会自动链接到&#x2F;usr&#x2F;bin下。">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2024-05-04T06:28:13.000Z">
-<meta property="article:modified_time" content="2024-05-04T06:28:13.593Z">
+<meta property="article:modified_time" content="2024-05-04T06:31:06.802Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
     
@@ -438,8 +438,8 @@
     
         <span class="article-date article-meta-item">
             <i class="fa-regular fa-wrench"></i>&nbsp;
-            <span class="desktop">2024-05-04 14:28:13</span>
-            <span class="mobile">2024-05-04 14:28:13</span>
+            <span class="desktop">2024-05-04 14:31:06</span>
+            <span class="mobile">2024-05-04 14:31:06</span>
             <span class="hover-info">Updated</span>
         </span>
     
@@ -488,6 +488,8 @@
 <div class="highlight-container" data-rel="Json"><figure class="iseeu highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&quot;--query-driver=/usr/bin/clang++*&quot;</span><span class="punctuation">,</span></span><br></pre></td></tr></table></figure></div>
 
 <p>现在是配在vscode的setting.json，理论上也可以把配置写到用户clangd配置。</p>
+<div class="highlight-container" data-rel="Yaml"><figure class="iseeu highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">---</span></span><br><span class="line"><span class="attr">CompileFlags:</span></span><br><span class="line">  <span class="attr">Add:</span> </span><br><span class="line">    <span class="bullet">-</span> <span class="string">&quot;-isystem&quot;</span></span><br><span class="line">    <span class="bullet">-</span> <span class="string">&quot;/usr/include/c++/12&quot;</span></span><br></pre></td></tr></table></figure></div>
+
 <h4 id="cmake"><a href="#cmake" class="headerlink" title="cmake"></a>cmake</h4><div class="highlight-container" data-rel="Cmake"><figure class="iseeu highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">set</span>(CMAKE_EXPORT_COMPILE_COMMANDS <span class="keyword">ON</span>)</span><br></pre></td></tr></table></figure></div>
 
 <p>加上这条，运行cmake会生成compile_commands.json，可以打开看看里面就是编译指令。clangd也会根据这个来找inlcude目录，这样项目内的头文件就能被找到</p>
@@ -506,7 +508,7 @@
         
             <li>
                 <strong>Updated at
-                    :</strong> 2024-05-04 14:28:13
+                    :</strong> 2024-05-04 14:31:06
             </li>
         
         <li>
