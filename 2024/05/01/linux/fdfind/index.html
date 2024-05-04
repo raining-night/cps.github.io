@@ -13,20 +13,20 @@
     
     <!--- Seo Part-->
     
-    <link rel="canonical" href="http://example.com/2024/03/22/gdb/"/>
+    <link rel="canonical" href="http://example.com/2024/05/01/linux/fdfind/"/>
     <meta name="robots" content="index,follow">
     <meta name="googlebot" content="index,follow">
     <meta name="revisit-after" content="1 days">
     
-        <meta name="description" content="基本调试命令行运行 1gdb .&#x2F;xx.out  启动对可执行文件xx.out的调试    命令 功能 命令完整形式    h [cmd] 查看相应gdb命令的帮助信息，可以使用简写。 help   r 进入调试后，程序不会直接开始运行，使用run指令开始运行指定的程序 run   q 退出调试。 quit   k 杀死正在运行的程序，但不退出调试。可以用r重新启动程序。 kill   源码">
+        <meta name="description" content="fd是find部分功能的替代品。用于按文件名搜索文件。 ubuntu在Ubuntu中，命令是fdfind，以避免与另一个现有的实用程序发生名称冲突。如果希望它是fd，可以设置一个别名 1alias fd&#x3D;fdfind  在版本显示及manpage中名字仍然显示为fd 用法不带参数时类似ls，但递归地列出子目录的文件。 第一个固定参数是匹配模式，之后是目录 目录可以有多个，不加默认当前目录 默认匹配">
 <meta property="og:type" content="article">
-<meta property="og:title" content="gdb常用命令">
-<meta property="og:url" content="http://example.com/2024/03/22/gdb/index.html">
+<meta property="og:title" content="fdfind">
+<meta property="og:url" content="http://example.com/2024/05/01/linux/fdfind/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="基本调试命令行运行 1gdb .&#x2F;xx.out  启动对可执行文件xx.out的调试    命令 功能 命令完整形式    h [cmd] 查看相应gdb命令的帮助信息，可以使用简写。 help   r 进入调试后，程序不会直接开始运行，使用run指令开始运行指定的程序 run   q 退出调试。 quit   k 杀死正在运行的程序，但不退出调试。可以用r重新启动程序。 kill   源码">
+<meta property="og:description" content="fd是find部分功能的替代品。用于按文件名搜索文件。 ubuntu在Ubuntu中，命令是fdfind，以避免与另一个现有的实用程序发生名称冲突。如果希望它是fd，可以设置一个别名 1alias fd&#x3D;fdfind  在版本显示及manpage中名字仍然显示为fd 用法不带参数时类似ls，但递归地列出子目录的文件。 第一个固定参数是匹配模式，之后是目录 目录可以有多个，不加默认当前目录 默认匹配">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2024-03-22T02:28:15.000Z">
-<meta property="article:modified_time" content="2024-04-06T15:58:07.512Z">
+<meta property="article:published_time" content="2024-05-01T04:20:30.000Z">
+<meta property="article:modified_time" content="2024-05-01T04:20:30.148Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
     
@@ -40,7 +40,7 @@
     
     <title>
         
-            gdb常用命令 -
+            fdfind -
         
         Endless Daydream&#39;s Blog
     </title>
@@ -384,7 +384,7 @@
         <div class="label text-third-text-color text-sm">Categories</div>
     </a>
     <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/archives">
-        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">23</div>
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">25</div>
         <div class="label text-third-text-color text-sm">Posts</div>
     </a>
 </div>
@@ -410,7 +410,7 @@
         <div class="article-title relative w-full">
             
                 <div class="w-full flex items-center pt-6 justify-start">
-                    <h1 class="article-title-regular text-second-text-color text-4xl md:text-6xl font-bold px-2 sm:px-6 md:px-8 py-3">gdb常用命令</h1>
+                    <h1 class="article-title-regular text-second-text-color text-4xl md:text-6xl font-bold px-2 sm:px-6 md:px-8 py-3">fdfind</h1>
                 </div>
             
             </div>
@@ -431,15 +431,15 @@
                         <div class="article-meta-info">
     <span class="article-date article-meta-item">
         <i class="fa-regular fa-pen-fancy"></i>&nbsp;
-        <span class="desktop">2024-03-22 10:28:15</span>
-        <span class="mobile">2024-03-22 10:28:15</span>
+        <span class="desktop">2024-05-01 12:20:30</span>
+        <span class="mobile">2024-05-01 12:20:30</span>
         <span class="hover-info">Created</span>
     </span>
     
         <span class="article-date article-meta-item">
             <i class="fa-regular fa-wrench"></i>&nbsp;
-            <span class="desktop">2024-04-06 23:58:07</span>
-            <span class="mobile">2024-04-06 23:58:07</span>
+            <span class="desktop">2024-05-01 12:20:30</span>
+            <span class="mobile">2024-05-01 12:20:30</span>
             <span class="hover-info">Updated</span>
         </span>
     
@@ -466,471 +466,31 @@
 
 
         <div class="article-content markdown-body px-2 sm:px-6 md:px-8 pb-8">
-            <h1 id="基本调试"><a href="#基本调试" class="headerlink" title="基本调试"></a>基本调试</h1><p>命令行运行</p>
-<div class="highlight-container" data-rel="Sh"><figure class="iseeu highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gdb ./xx.out</span><br></pre></td></tr></table></figure></div>
+            <p>fd是find部分功能的替代品。用于按文件名搜索文件。</p>
+<h3 id="ubuntu"><a href="#ubuntu" class="headerlink" title="ubuntu"></a>ubuntu</h3><p>在Ubuntu中，命令是fdfind，以避免与另一个现有的实用程序发生名称冲突。如果希望它是fd，可以设置一个别名</p>
+<div class="highlight-container" data-rel="Sh"><figure class="iseeu highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">alias</span> fd=fdfind</span><br></pre></td></tr></table></figure></div>
 
-<p>启动对可执行文件xx.out的调试</p>
-<table>
-<thead>
-<tr>
-<th>命令</th>
-<th>功能</th>
-<th>命令完整形式</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>h [cmd]</td>
-<td>查看相应gdb命令的帮助信息，可以使用简写。</td>
-<td>help</td>
-</tr>
-<tr>
-<td>r</td>
-<td>进入调试后，程序不会直接开始运行，使用run指令开始运行指定的程序</td>
-<td>run</td>
-</tr>
-<tr>
-<td>q</td>
-<td>退出调试。</td>
-<td>quit</td>
-</tr>
-<tr>
-<td>k</td>
-<td>杀死正在运行的程序，但不退出调试。可以用<code>r</code>重新启动程序。</td>
-<td>kill</td>
-</tr>
-</tbody></table>
-<h2 id="源码"><a href="#源码" class="headerlink" title="源码"></a>源码</h2><table>
-<thead>
-<tr>
-<th>命令</th>
-<th>功能</th>
-<th>命令完整形式</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>l</td>
-<td>打印几行源码，反复执行会继续向下打印。</td>
-<td>list</td>
-</tr>
-</tbody></table>
-<h3 id="断点"><a href="#断点" class="headerlink" title="断点"></a>断点</h3><table>
-<thead>
-<tr>
-<th>命令</th>
-<th>功能</th>
-<th>命令完整形式</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>b</td>
-<td>打断点，跟数字表示行号，跟名字表示函数名。</td>
-<td>breakpoint</td>
-</tr>
-<tr>
-<td>i b</td>
-<td>显示已经打的断点。每个断点有一个编号。</td>
-<td>info breakpoint</td>
-</tr>
-<tr>
-<td>cl</td>
-<td>清除断点，跟数字表示行号，跟名字表示函数名。不加参数表示清除所有。</td>
-<td>clear</td>
-</tr>
-<tr>
-<td>d</td>
-<td>清除断点，一个参数指定断点号，两个参数为断点号范围，不加参数表示清除所有。</td>
-<td>delete</td>
-</tr>
-<tr>
-<td>en &#x2F; dis</td>
-<td>启用&#x2F;暂时禁用断点，指定方式同d，不清除断点。</td>
-<td>enable &#x2F; disable</td>
-</tr>
-</tbody></table>
-<p>如果不打断点，启动后程序会不停运行直到结束。</p>
-<h3 id="运行"><a href="#运行" class="headerlink" title="运行"></a>运行</h3><table>
-<thead>
-<tr>
-<th>命令</th>
-<th>功能</th>
-<th>命令完整形式</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>n</td>
-<td>单步执行一行代码,如果是函数调用不会进入</td>
-<td>next</td>
-</tr>
-<tr>
-<td>s</td>
-<td>单步执行一行代码，会进入函数内部</td>
-<td>step</td>
-</tr>
-<tr>
-<td>c</td>
-<td>继续运行直到下一次中断，或程序结束</td>
-<td>continue</td>
-</tr>
-<tr>
-<td>fin</td>
-<td>继续运行直到当前函数结束</td>
-<td>finish</td>
-</tr>
-<tr>
-<td>u</td>
-<td>运行到当前循环结束</td>
-<td>until</td>
-</tr>
-<tr>
-<td>bt</td>
-<td>查看当前堆栈，多用于查看异常处</td>
-<td>breaktrace</td>
-</tr>
-</tbody></table>
-<h2 id="汇编"><a href="#汇编" class="headerlink" title="汇编"></a>汇编</h2><table>
-<thead>
-<tr>
-<th>命令</th>
-<th>功能</th>
-<th>命令完整形式</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>disas</td>
-<td>打印汇编代码，对应list指令</td>
-<td>disassemble</td>
-</tr>
-<tr>
-<td>ni</td>
-<td>单步执行一行汇编(instruction),如果这一行是函数调用不会进入。对应n</td>
-<td>nexti</td>
-</tr>
-<tr>
-<td>si</td>
-<td>单步执行一行汇编(instruction),会进入函数调用。对应s</td>
-<td>stepi</td>
-</tr>
-</tbody></table>
-<h2 id="查看"><a href="#查看" class="headerlink" title="查看"></a>查看</h2><p>速览表：</p>
-<table>
-<thead>
-<tr>
-<th>命令</th>
-<th>功能</th>
-<th>命令完整形式</th>
-</tr>
-</thead>
-<tbody><tr>
-<td><code>p i</code></td>
-<td>查看源码中的变量</td>
-<td><code>print i</code></td>
-</tr>
-<tr>
-<td><code>p &amp;i</code></td>
-<td>查看变量地址</td>
-<td><code>print &amp;i</code></td>
-</tr>
-<tr>
-<td>disp i</td>
-<td>类似p，但不是一次性的，每次暂停时都会打印</td>
-<td>display i</td>
-</tr>
-<tr>
-<td><code>i r rax</code> &#x2F; <code>p $rax</code></td>
-<td>查看寄存器</td>
-<td><code>info registers rax</code> &#x2F; <code>print $rax</code></td>
-</tr>
-<tr>
-<td><code>x/2xh $rsi</code></td>
-<td>查看内存</td>
-<td><code>x/2xh $rsi</code></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-</tbody></table>
-<p>print命令有丰富的用法，具体见<code>help print</code>。</p>
-<p><strong>x命令格式控制</strong></p>
-<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">x/nfu addr</span><br></pre></td></tr></table></figure></div>
+<p>在版本显示及manpage中名字仍然显示为fd</p>
+<h3 id="用法"><a href="#用法" class="headerlink" title="用法"></a>用法</h3><p>不带参数时类似ls，但递归地列出子目录的文件。</p>
+<p>第一个固定参数是匹配模式，之后是目录</p>
+<p>目录可以有多个，不加默认当前目录</p>
+<h4 id="默认匹配方式"><a href="#默认匹配方式" class="headerlink" title="默认匹配方式"></a>默认匹配方式</h4><p>全小写时忽略大小写匹配，有大写字母时区分大小写。</p>
+<p>-i指定忽略大小写，-s指定区分大小写。</p>
+<h4 id="后缀搜索"><a href="#后缀搜索" class="headerlink" title="后缀搜索"></a>后缀搜索</h4><p>要查看特定类型的文件，使用-e选项加扩展名，不必加前缀’.’</p>
+<div class="highlight-container" data-rel="Sh"><figure class="iseeu highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">fdfind -e jpg</span><br></pre></td></tr></table></figure></div>
 
-<p>nfu为格式控制，可选省略。</p>
-<p>n为数字，表示查看的内存单元个数，默认为1。一个内存单元长度由u指定。f为输出格式控制符。</p>
-<p>命令x和&#x2F;中间可以没有空格。</p>
-<p>f：</p>
-<table>
-<thead>
-<tr>
-<th>字符</th>
-<th>进制</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>x</td>
-<td>16</td>
-</tr>
-<tr>
-<td>o</td>
-<td>8</td>
-</tr>
-<tr>
-<td>b</td>
-<td>2</td>
-</tr>
-<tr>
-<td>d <strong>(default)</strong></td>
-<td>10 有符号</td>
-</tr>
-<tr>
-<td>u</td>
-<td>10 无符号</td>
-</tr>
-<tr>
-<td>s</td>
-<td>字符串，碰到\0停下</td>
-</tr>
-<tr>
-<td>c</td>
-<td>字符格式</td>
-</tr>
-</tbody></table>
-<p>u：</p>
-<table>
-<thead>
-<tr>
-<th>字符</th>
-<th>字节</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>b</td>
-<td>单字节</td>
-</tr>
-<tr>
-<td>h</td>
-<td>双字</td>
-</tr>
-<tr>
-<td>w</td>
-<td>四字</td>
-</tr>
-<tr>
-<td>g</td>
-<td>八字</td>
-</tr>
-</tbody></table>
-<p>例：</p>
-<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">x/4xw $rbp</span><br></pre></td></tr></table></figure></div>
+<h4 id="文件类型"><a href="#文件类型" class="headerlink" title="文件类型"></a>文件类型</h4><p>-t 指定文件类型</p>
+<p>f: 文件</p>
+<p>d: 目录</p>
+<p>l: 符号链接</p>
+<p>x: 可执行文件</p>
+<p>e: 空文件</p>
+<h4 id="相对路径-绝对路径输出"><a href="#相对路径-绝对路径输出" class="headerlink" title="相对路径&#x2F;绝对路径输出"></a>相对路径&#x2F;绝对路径输出</h4><p>默认输出相对路径</p>
+<p>-a 指定输出绝对路径</p>
+<h4 id="执行命令"><a href="#执行命令" class="headerlink" title="执行命令"></a>执行命令</h4><p>-x 加命令，将搜索结果传递给命令来执行</p>
+<div class="highlight-container" data-rel="Sh"><figure class="iseeu highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">fdfind -e zip -x unzip &#123;&#125; -d &#123;//&#125;</span><br></pre></td></tr></table></figure></div>
 
-<p>以16进制显示4个4字节数，起始地址为%rbp（栈底寄存器）。注意显示的不是寄存器的内容，而是用寄存器的值寻址的内存里的结果。</p>
-<p>注：</p>
-<ul>
-<li>不指定内存地址addr，会从上次显示结束的地方开始。</li>
-<li>不指定格式会沿用上一次指定的格式，gdb打开时默认格式是&#x2F;1xw，即16进制显示1个4字节。</li>
-</ul>
-<h2 id="修改"><a href="#修改" class="headerlink" title="修改"></a>修改</h2><p>在程序执行中临时修改变量&#x2F;寄存器的值，改变结果&#x2F;控制流。</p>
-<p><code>set var VAR = EXP</code></p>
-<table>
-<thead>
-<tr>
-<th>命令</th>
-<th>功能</th>
-<th>命令完整形式</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>set var i &#x3D; 5</td>
-<td>设置变量</td>
-<td>set variable VAR &#x3D; EXP</td>
-</tr>
-<tr>
-<td>p i &#x3D; 5</td>
-<td>设置变量同时回显</td>
-<td>print i &#x3D; 5</td>
-</tr>
-<tr>
-<td>set var $rax&#x3D;3</td>
-<td>设置寄存器</td>
-<td></td>
-</tr>
-</tbody></table>
-<p>通用魔法：</p>
-<ul>
-<li>修改eax寄存器，改变返回值</li>
-<li>修改pc &#x2F; rip寄存器，改变控制流</li>
-</ul>
-<h1 id="多窗口"><a href="#多窗口" class="headerlink" title="多窗口"></a>多窗口</h1><table>
-<thead>
-<tr>
-<th>命令</th>
-<th>功能</th>
-<th>命令完整形式</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>la sr</td>
-<td>显示源代码窗口。分屏成两个窗口</td>
-<td>layout src</td>
-</tr>
-<tr>
-<td>la a</td>
-<td>显示汇编窗口。分屏成两个窗口</td>
-<td>layout asm</td>
-</tr>
-<tr>
-<td>la r</td>
-<td>显示寄存器窗口。如果已经显示了源码或汇编，会分出第三个窗口而不是覆盖</td>
-<td>layout regs</td>
-</tr>
-<tr>
-<td>la sp</td>
-<td>显示源代码和汇编窗口</td>
-<td>layout split</td>
-</tr>
-<tr>
-<td>Ctrl-x a</td>
-<td>退出所有窗口，回到单独的命令行</td>
-<td></td>
-</tr>
-<tr>
-<td>ref &#x2F; Ctrl-L</td>
-<td>刷新屏幕，当窗口显示乱掉的时候用</td>
-<td>refresh</td>
-</tr>
-</tbody></table>
-<h2 id="焦点"><a href="#焦点" class="headerlink" title="焦点"></a>焦点</h2><table>
-<thead>
-<tr>
-<th>命令</th>
-<th>功能</th>
-<th>命令完整形式</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>fs n &#x2F; p</td>
-<td>聚焦到下一个&#x2F;上一个窗口</td>
-<td>focus next&#x2F;prev</td>
-</tr>
-<tr>
-<td>Ctrl-x o</td>
-<td>聚焦到下一个窗口</td>
-<td></td>
-</tr>
-<tr>
-<td>fs [window name]</td>
-<td>聚焦到指定名字的窗口</td>
-<td>focus</td>
-</tr>
-<tr>
-<td>upd</td>
-<td>定位到<strong>源码</strong>中正在运行的位置，用于翻页后回来</td>
-<td>update</td>
-</tr>
-</tbody></table>
-<p>合法的窗口名字有a(sm)，r(egs)，status（即命令行），src</p>
-<p>注：</p>
-<ul>
-<li><p>当焦点不在命令行窗口时，可以通过方向键来浏览所在窗口的内容，page up和page down翻页。</p>
-</li>
-<li><p>键盘输入仍然输入到命令行。此时如果要翻阅历史命令，用快捷键Ctrl-p和Ctrl-n替代上下键。</p>
-</li>
-</ul>
-<h1 id="进阶"><a href="#进阶" class="headerlink" title="进阶"></a>进阶</h1><table>
-<thead>
-<tr>
-<th>命令</th>
-<th>功能</th>
-<th>命令完整形式</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>apr [cmd]</td>
-<td>模糊查找命令</td>
-<td>apropos</td>
-</tr>
-<tr>
-<td>cd</td>
-<td>类似shell的cd，改变工作目录</td>
-<td>cd</td>
-</tr>
-<tr>
-<td>pw</td>
-<td>类似shell，打印当前工作目录</td>
-<td>pwd</td>
-</tr>
-<tr>
-<td>set args xxx</td>
-<td>指定运行时向程序传入的参数</td>
-<td>set args xxx</td>
-</tr>
-<tr>
-<td>show args</td>
-<td>查看设置的参数</td>
-<td>show&#x3D;info set</td>
-</tr>
-</tbody></table>
-<h2 id="无源码调试"><a href="#无源码调试" class="headerlink" title="无源码调试"></a>无源码调试</h2><p>只有-g生成的可执行文件。</p>
-<table>
-<thead>
-<tr>
-<th>命令</th>
-<th>功能</th>
-<th>命令完整形式</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>i locals</td>
-<td>查看函数局部变量名</td>
-<td></td>
-</tr>
-<tr>
-<td>pt VAR</td>
-<td>查看变量名所属类型的定义</td>
-<td>ptype VAR</td>
-</tr>
-<tr>
-<td>wha EXP</td>
-<td>查看表达式类型，相比ptype的输出更简单</td>
-<td>whatis EXP</td>
-</tr>
-</tbody></table>
-<h2 id="停止点"><a href="#停止点" class="headerlink" title="停止点"></a>停止点</h2><table>
-<thead>
-<tr>
-<th>命令</th>
-<th>功能</th>
-<th>命令完整形式</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>wa VAR</td>
-<td>一旦VAR的值有变化就暂停</td>
-<td>watch VAR</td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-</tbody></table>
-<p>条件中断</p>
-<p>watchpoint</p>
-<p>catchpoint</p>
-<h2 id="栈帧"><a href="#栈帧" class="headerlink" title="栈帧"></a>栈帧</h2><h2 id="多线程"><a href="#多线程" class="headerlink" title="多线程"></a>多线程</h2><h2 id="gdbinit"><a href="#gdbinit" class="headerlink" title="gdbinit"></a>gdbinit</h2><p>gdb启动时会运行<code>~/.gdbinit</code>文件，在这里可以用gdb命令写一些个人习惯的调试配置，类似这样：</p>
-<div class="highlight-container" data-rel="Sh"><figure class="iseeu highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">set</span> args input.txt <span class="comment"># 设置输入参数</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 修改/自定义命令</span></span><br><span class="line">define n</span><br><span class="line">	next</span><br><span class="line">	refresh</span><br><span class="line">end</span><br></pre></td></tr></table></figure></div>
-
-<p>如果在某个可执行文件的工作目录处建.gdbinit，gdb不会直接运行它，而是出于安全考虑弹出类似的警告：</p>
-<blockquote>
-<p>warning: File “xxx&#x2F;.gdbinit” auto-loading has been declined by your &#96;auto-load safe-path’ set to “$debugdir:$datadir&#x2F;auto-load”.<br>To enable execution of this file add<br>add-auto-load-safe-path xxx&#x2F;.gdbinit<br>line to your configuration file “<del>&#x2F;.config&#x2F;gdb&#x2F;gdbinit”.<br>To completely disable this security protection add<br>set auto-load safe-path &#x2F;<br>line to your configuration file “</del>&#x2F;.config&#x2F;gdb&#x2F;gdbinit”.<br>For more information about this security protection see the<br>“Auto-loading safe path” section in the GDB manual.  E.g., run from the shell:<br>info “(gdb)Auto-loading safe path”</p>
-</blockquote>
-<p>可以在~&#x2F;.config&#x2F;gdb&#x2F;gdbinit文件（如果没有就新建一个）中将shell工作目录<code>.</code> 加入信任的目录来解决。</p>
-<div class="highlight-container" data-rel="Lua"><figure class="iseeu highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">add-auto-<span class="built_in">load</span>-safe-<span class="built_in">path</span> ./</span><br></pre></td></tr></table></figure></div>
-
-
-
-<h1 id="hook"><a href="#hook" class="headerlink" title="hook"></a>hook</h1><p>参考资料：</p>
-<p><a class="link"   target="_blank" rel="noopener" href="https://quickref.cn/docs/gdb.html" >gdb cheatsheet <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+<p>其中<code>&#123;&#125;</code>是结果占位符，<code>&#123;//&#125;</code>是父目录占位符。占位替换时都使用绝对路径。</p>
 
         </div>
 
@@ -938,18 +498,18 @@
             <div class="post-copyright-info w-full my-8 px-2 sm:px-6 md:px-8">
                 <div class="article-copyright-info-container">
     <ul>
-        <li><strong>Title:</strong> gdb常用命令</li>
+        <li><strong>Title:</strong> fdfind</li>
         <li><strong>Author:</strong> Endless_daydream</li>
         <li><strong>Created at
-                :</strong> 2024-03-22 10:28:15</li>
+                :</strong> 2024-05-01 12:20:30</li>
         
             <li>
                 <strong>Updated at
-                    :</strong> 2024-04-06 23:58:07
+                    :</strong> 2024-05-01 12:20:30
             </li>
         
         <li>
-            <strong>Link:</strong> https://endless_daydream.gitee.io/2024/03/22/gdb/
+            <strong>Link:</strong> https://endless_daydream.gitee.io/2024/05/01/linux/fdfind/
         </li>
         <li>
             <strong>
@@ -977,13 +537,13 @@
                     <div class="article-prev border-border-color shadow-redefine-flat shadow-shadow-color-2 rounded-medium px-4 py-2 hover:shadow-redefine-flat-hover hover:shadow-shadow-color-2">
                         <a class="prev"
                         rel="prev"
-                        href="/2024/03/22/no-root-linux/"
+                        href="/2024/05/04/markdown/"
                         >
                             <span class="left arrow-icon flex justify-center items-center">
                                 <i class="fa-solid fa-chevron-left"></i>
                             </span>
                             <span class="title flex justify-center items-center">
-                                <span class="post-nav-title-item">无root权限安装软件</span>
+                                <span class="post-nav-title-item">Markdown代码块可声明编程语言类型</span>
                                 <span class="post-nav-item">Prev posts</span>
                             </span>
                         </a>
@@ -993,10 +553,10 @@
                     <div class="article-next border-border-color shadow-redefine-flat shadow-shadow-color-2 rounded-medium px-4 py-2 hover:shadow-redefine-flat-hover hover:shadow-shadow-color-2">
                         <a class="next"
                         rel="next"
-                        href="/2024/03/21/tmux%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/"
+                        href="/2024/04/09/linux/ssh/"
                         >
                             <span class="title flex justify-center items-center">
-                                <span class="post-nav-title-item">tmux常用命令</span>
+                                <span class="post-nav-title-item">ssh</span>
                                 <span class="post-nav-item">Next posts</span>
                             </span>
                             <span class="right arrow-icon flex justify-center items-center">
@@ -1059,8 +619,8 @@
             <div class="post-toc-wrap">
     <div class="post-toc">
         <div class="toc-title">On this page</div>
-        <div class="page-title">gdb常用命令</div>
-        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E8%B0%83%E8%AF%95"><span class="nav-text">基本调试</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%BA%90%E7%A0%81"><span class="nav-text">源码</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%96%AD%E7%82%B9"><span class="nav-text">断点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BF%90%E8%A1%8C"><span class="nav-text">运行</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B1%87%E7%BC%96"><span class="nav-text">汇编</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9F%A5%E7%9C%8B"><span class="nav-text">查看</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BF%AE%E6%94%B9"><span class="nav-text">修改</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%A4%9A%E7%AA%97%E5%8F%A3"><span class="nav-text">多窗口</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%84%A6%E7%82%B9"><span class="nav-text">焦点</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%BF%9B%E9%98%B6"><span class="nav-text">进阶</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%97%A0%E6%BA%90%E7%A0%81%E8%B0%83%E8%AF%95"><span class="nav-text">无源码调试</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%81%9C%E6%AD%A2%E7%82%B9"><span class="nav-text">停止点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A0%88%E5%B8%A7"><span class="nav-text">栈帧</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A4%9A%E7%BA%BF%E7%A8%8B"><span class="nav-text">多线程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#gdbinit"><span class="nav-text">gdbinit</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#hook"><span class="nav-text">hook</span></a></li></ol>
+        <div class="page-title">fdfind</div>
+        <ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#ubuntu"><span class="nav-text">ubuntu</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%94%A8%E6%B3%95"><span class="nav-text">用法</span></a></li></ol>
 
     </div>
 </div>
@@ -1093,7 +653,7 @@
                 
                 <p class="post-count space-x-0.5">
                     <span>
-                        23 posts in total
+                        25 posts in total
                     </span>
                     
                 </p>

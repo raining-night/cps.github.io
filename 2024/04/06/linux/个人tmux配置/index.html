@@ -13,20 +13,20 @@
     
     <!--- Seo Part-->
     
-    <link rel="canonical" href="http://example.com/2024/04/06/gdb无源码调试/"/>
+    <link rel="canonical" href="http://example.com/2024/04/06/linux/个人tmux配置/"/>
     <meta name="robots" content="index,follow">
     <meta name="googlebot" content="index,follow">
     <meta name="revisit-after" content="1 days">
     
-        <meta name="description" content="首先尝试获取源码文件的信息，如果能找到在哪里是最好。  查看源代码文件名和编译目录 1info source  输出类似这样： 12345678(gdb) info sourceCurrent source file is &#x2F;mnt&#x2F;d&#x2F;cpp&#x2F;main.cppCompilation directory is &#x2F;mnt&#x2F;dSource language is c++.Producer is GNU">
+        <meta name="description" content="tmux的用户级配置文件为~&#x2F;.tmux.conf（没有的话就创建一个） 快捷键前缀键prefix：C-a 1234# prefix: C-aunbind C-bset -g prefix C-abind C-a send-prefix    窗格(pane)切换：hjkl 12345# 绑定hjkl键为面板切换的上下左右键bind -r k select-pane -U # 绑定k为↑bind">
 <meta property="og:type" content="article">
-<meta property="og:title" content="gdb无源码调试">
-<meta property="og:url" content="http://example.com/2024/04/06/gdb%E6%97%A0%E6%BA%90%E7%A0%81%E8%B0%83%E8%AF%95/index.html">
+<meta property="og:title" content="个人tmux配置">
+<meta property="og:url" content="http://example.com/2024/04/06/linux/%E4%B8%AA%E4%BA%BAtmux%E9%85%8D%E7%BD%AE/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="首先尝试获取源码文件的信息，如果能找到在哪里是最好。  查看源代码文件名和编译目录 1info source  输出类似这样： 12345678(gdb) info sourceCurrent source file is &#x2F;mnt&#x2F;d&#x2F;cpp&#x2F;main.cppCompilation directory is &#x2F;mnt&#x2F;dSource language is c++.Producer is GNU">
+<meta property="og:description" content="tmux的用户级配置文件为~&#x2F;.tmux.conf（没有的话就创建一个） 快捷键前缀键prefix：C-a 1234# prefix: C-aunbind C-bset -g prefix C-abind C-a send-prefix    窗格(pane)切换：hjkl 12345# 绑定hjkl键为面板切换的上下左右键bind -r k select-pane -U # 绑定k为↑bind">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2024-04-06T14:44:23.000Z">
-<meta property="article:modified_time" content="2024-04-06T15:53:54.359Z">
+<meta property="article:published_time" content="2024-04-06T06:42:45.000Z">
+<meta property="article:modified_time" content="2024-04-06T07:51:03.218Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
     
@@ -40,7 +40,7 @@
     
     <title>
         
-            gdb无源码调试 -
+            个人tmux配置 -
         
         Endless Daydream&#39;s Blog
     </title>
@@ -384,7 +384,7 @@
         <div class="label text-third-text-color text-sm">Categories</div>
     </a>
     <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/archives">
-        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">23</div>
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">25</div>
         <div class="label text-third-text-color text-sm">Posts</div>
     </a>
 </div>
@@ -410,7 +410,7 @@
         <div class="article-title relative w-full">
             
                 <div class="w-full flex items-center pt-6 justify-start">
-                    <h1 class="article-title-regular text-second-text-color text-4xl md:text-6xl font-bold px-2 sm:px-6 md:px-8 py-3">gdb无源码调试</h1>
+                    <h1 class="article-title-regular text-second-text-color text-4xl md:text-6xl font-bold px-2 sm:px-6 md:px-8 py-3">个人tmux配置</h1>
                 </div>
             
             </div>
@@ -431,15 +431,15 @@
                         <div class="article-meta-info">
     <span class="article-date article-meta-item">
         <i class="fa-regular fa-pen-fancy"></i>&nbsp;
-        <span class="desktop">2024-04-06 22:44:23</span>
-        <span class="mobile">2024-04-06 22:44:23</span>
+        <span class="desktop">2024-04-06 14:42:45</span>
+        <span class="mobile">2024-04-06 14:42:45</span>
         <span class="hover-info">Created</span>
     </span>
     
         <span class="article-date article-meta-item">
             <i class="fa-regular fa-wrench"></i>&nbsp;
-            <span class="desktop">2024-04-06 23:53:54</span>
-            <span class="mobile">2024-04-06 23:53:54</span>
+            <span class="desktop">2024-04-06 15:51:03</span>
+            <span class="mobile">2024-04-06 15:51:03</span>
             <span class="hover-info">Updated</span>
         </span>
     
@@ -466,78 +466,48 @@
 
 
         <div class="article-content markdown-body px-2 sm:px-6 md:px-8 pb-8">
-            <p>首先尝试获取源码文件的信息，如果能找到在哪里是最好。</p>
-<ol>
-<li><p>查看源代码文件名和编译目录</p>
-<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">info source</span><br></pre></td></tr></table></figure></div>
+            <p>tmux的用户级配置文件为<code>~/.tmux.conf</code>（没有的话就创建一个）</p>
+<h2 id="快捷键"><a href="#快捷键" class="headerlink" title="快捷键"></a>快捷键</h2><p>前缀键prefix：<code>C-a</code></p>
+<div class="highlight-container" data-rel="Sh"><figure class="iseeu highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># prefix: C-a</span></span><br><span class="line">unbind C-b</span><br><span class="line"><span class="built_in">set</span> -g prefix C-a</span><br><span class="line"><span class="built_in">bind</span> C-a send-prefix</span><br></pre></td></tr></table></figure></div>
 
-<p>输出类似这样：</p>
-<div class="highlight-container" data-rel="Sh"><figure class="iseeu highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">(gdb) info <span class="built_in">source</span></span><br><span class="line">Current <span class="built_in">source</span> file is /mnt/d/cpp/main.cpp</span><br><span class="line">Compilation directory is /mnt/d</span><br><span class="line">Source language is c++.</span><br><span class="line">Producer is GNU C++ 5.4.0 20160609 -mtune=generic -march=x86-64 -g -fstack-protector-strong.</span><br><span class="line">Compiled with DWARF 2 debugging format.</span><br><span class="line">Does not include preprocessor macro info.</span><br><span class="line">(gdb)</span><br></pre></td></tr></table></figure></div>
 
-<p>这些是在编译的时候记录在二进制文件里的。<br>由此可知编译的时候，源文件路径为<code>/mnt/d/cpp/main.cpp</code>，编译目录为<code>/mnt/d</code>。<br>但有可能之后移动过，源码不在那里了。</p>
-</li>
-<li><p>查看源码搜索路径</p>
-<p>如果找到了源码，要把源码目录加入搜索路径，使用</p>
-<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dir your/path/to/code</span><br></pre></td></tr></table></figure></div>
 
-<p>附：</p>
-<p>gdb搜索源码的原理：</p>
-<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">show dir</span><br></pre></td></tr></table></figure></div>
+<p>窗格(pane)切换：<code>hjkl</code></p>
+<div class="highlight-container" data-rel="Sh"><figure class="iseeu highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 绑定hjkl键为面板切换的上下左右键</span></span><br><span class="line"><span class="built_in">bind</span> -r k select-pane -U <span class="comment"># 绑定k为↑</span></span><br><span class="line"><span class="built_in">bind</span> -r j select-pane -D <span class="comment"># 绑定j为↓</span></span><br><span class="line"><span class="built_in">bind</span> -r h select-pane -L <span class="comment"># 绑定h为←</span></span><br><span class="line"><span class="built_in">bind</span> -r l select-pane -R <span class="comment"># 绑定l为→</span></span><br></pre></td></tr></table></figure></div>
 
-<p>默认情况输出如下</p>
-<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Source directories searched: $cdir:$cwd</span><br></pre></td></tr></table></figure></div>
+<p><code>-r</code>表示可重复按键，大概500ms之内，重复的<code>h</code>、<code>j</code>、<code>k</code>、<code>l</code>按键都将有效</p>
+<p>窗格(pane)大小调整：<code>C-hjkl</code></p>
+<div class="highlight-container" data-rel="Sh"><figure class="iseeu highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 绑定Ctrl+hjkl键为面板上下左右调整边缘的快捷指令</span></span><br><span class="line"><span class="built_in">bind</span> -r ^k resizep -U 10 <span class="comment"># 绑定Ctrl+k为往↑调整面板边缘10个单元格</span></span><br><span class="line"><span class="built_in">bind</span> -r ^j resizep -D 10 <span class="comment"># 绑定Ctrl+j为往↓调整面板边缘10个单元格</span></span><br><span class="line"><span class="built_in">bind</span> -r ^h resizep -L 10 <span class="comment"># 绑定Ctrl+h为往←调整面板边缘10个单元格</span></span><br><span class="line"><span class="built_in">bind</span> -r ^l resizep -R 10 <span class="comment"># 绑定Ctrl+l为往→调整面板边缘10个单元格</span></span><br></pre></td></tr></table></figure></div>
 
-<p>其中的$cdir就是上面的<code>/mnt/d</code>。$cwd就是当前工作目录，可以用gdb的cd命令改变。因此现在有两个搜索目录。假设再加入我们设定的目录&#x2F;abc</p>
-<p>按上面的源码路径<code>/mnt/d/cpp/main.cpp</code>，将会搜索以下路径的文件</p>
-<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">/mnt/d/cpp/main.cpp</span><br><span class="line"></span><br><span class="line">$cdir/mnt/d/cpp/main.cpp</span><br><span class="line">$cwd/mnt/d/cpp/main.cpp</span><br><span class="line">/abc/mnt/d/cpp/main.cpp</span><br><span class="line"></span><br><span class="line">$cdir/main.cpp</span><br><span class="line">$cwd/main.cpp</span><br><span class="line">/abc/main.cpp</span><br></pre></td></tr></table></figure></div></li>
-</ol>
-<p>只有带调试信息的可执行文件。</p>
-<table>
-<thead>
-<tr>
-<th>命令</th>
-<th>功能</th>
-<th>命令完整形式</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>i locals</td>
-<td>查看函数局部变量名</td>
-<td>info locals</td>
-</tr>
-<tr>
-<td>i var</td>
-<td>查看全局变量名</td>
-<td>info variables</td>
-</tr>
-<tr>
-<td>i line [number] | [addr]</td>
-<td>查看指定行号&#x2F;地址的汇编信息，会打印所在函数名</td>
-<td>info line</td>
-</tr>
-<tr>
-<td>pt VAR</td>
-<td>查看变量名所属类型的定义</td>
-<td>ptype VAR</td>
-</tr>
-<tr>
-<td>wha EXP</td>
-<td>查看表达式类型，相比ptype的输出更简单</td>
-<td>whatis EXP</td>
-</tr>
-<tr>
-<td>bt</td>
-<td>查看栈信息，查看入参的值</td>
-<td>breaktrace</td>
-</tr>
-</tbody></table>
-<p>善用print</p>
-<div class="highlight-container" data-rel="Sh"><figure class="iseeu highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">p sizeof(var/type) <span class="comment"># 查看变量/类型所占内存大小</span></span><br><span class="line">p/x <span class="variable">$rbp</span>-<span class="variable">$rsp</span> <span class="comment"># 查看当前栈大小</span></span><br><span class="line"><span class="built_in">printf</span> <span class="string">&quot;%d\n&quot;</span>, var <span class="comment"># 调用printf输出格式</span></span><br></pre></td></tr></table></figure></div>
+<p>以上，<code>resizep</code>即<code>resize-pane</code>的别名。</p>
+<p>复制模式默认是emacs的移动方式，切换成vi模式：</p>
+<div class="highlight-container" data-rel="Sh"><figure class="iseeu highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">setw -g mode-keys vi</span><br></pre></td></tr></table></figure></div>
+
+
+
+<p>复制模式粘贴到系统剪贴板</p>
+<p>需要下载命令行工具xsel或xclip，它们将输入放到系统剪贴板。通常的用法是管道接住其他命令的输出。</p>
+<div class="highlight-container" data-rel="Sh"><figure class="iseeu highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install xsel</span><br></pre></td></tr></table></figure></div>
+
+<p>tmux重新映射copy mode的复制键为 管道输出到xsel&#x2F;xclip 即可。</p>
+<div class="highlight-container" data-rel="Sh"><figure class="iseeu highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># copy to system clipboard</span></span><br><span class="line"><span class="built_in">bind</span> -T copy-mode-vi Enter send-keys -X copy-pipe-and-cancel <span class="string">&quot;xsel -i --clipboard&quot;</span></span><br></pre></td></tr></table></figure></div>
+
+
+
+<p>打开新窗格&#x2F;窗口时保持工作目录在当前位置</p>
+<div class="highlight-container" data-rel="Sh"><figure class="iseeu highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">bind</span> c new-window -c <span class="string">&quot;#&#123;pane_current_path&#125;&quot;</span></span><br><span class="line"><span class="built_in">bind</span> % split-window -h -c <span class="string">&quot;#&#123;pane_current_path&#125;&quot;</span></span><br><span class="line"><span class="built_in">bind</span> <span class="string">&#x27;&quot;&#x27;</span> split-window -c <span class="string">&quot;#&#123;pane_current_path&#125;&quot;</span></span><br></pre></td></tr></table></figure></div>
+
+
+
+<h2 id="ssh远程连接"><a href="#ssh远程连接" class="headerlink" title="ssh远程连接"></a>ssh远程连接</h2><p>对于ssh有额外的问题：只复制到了远程的系统剪贴板，没复制到本地。这是另外一个话题，详见 <a href="">todo</a>。</p>
+<p>在tmux中修改了配置，要立刻应用到当前窗口中，用<code>:source ~/.tmux.conf</code></p>
+<h2 id="完整个人配置文档"><a href="#完整个人配置文档" class="headerlink" title="完整个人配置文档"></a>完整个人配置文档</h2><p><code>~/.tmux.conf</code>：</p>
+<div class="highlight-container" data-rel="Sh"><figure class="iseeu highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 设置支持256color</span></span><br><span class="line"><span class="built_in">set</span> -g default-terminal <span class="string">&quot;xterm-256color&quot;</span></span><br><span class="line">set-option -a terminal-overrides <span class="string">&quot;,*256col*:RGB&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># prefix: C-a</span></span><br><span class="line"><span class="built_in">set</span> -g prefix C-a</span><br><span class="line"><span class="built_in">bind</span> C-a send-prefix</span><br><span class="line">unbind C-b</span><br><span class="line"></span><br><span class="line"><span class="comment"># 绑定hjkl键为面板切换的上下左右键</span></span><br><span class="line"><span class="built_in">bind</span> -r k select-pane -U <span class="comment"># 绑定k为↑</span></span><br><span class="line"><span class="built_in">bind</span> -r j select-pane -D <span class="comment"># 绑定j为↓</span></span><br><span class="line"><span class="built_in">bind</span> -r h select-pane -L <span class="comment"># 绑定h为←</span></span><br><span class="line"><span class="built_in">bind</span> -r l select-pane -R <span class="comment"># 绑定l为→</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 绑定Ctrl+hjkl键为面板上下左右调整边缘的快捷指令</span></span><br><span class="line"><span class="built_in">bind</span> -r ^k resizep -U 10 <span class="comment"># 绑定Ctrl+k为往↑调整面板边缘10个单元格</span></span><br><span class="line"><span class="built_in">bind</span> -r ^j resizep -D 10 <span class="comment"># 绑定Ctrl+j为往↓调整面板边缘10个单元格</span></span><br><span class="line"><span class="built_in">bind</span> -r ^h resizep -L 10 <span class="comment"># 绑定Ctrl+h为往←调整面板边缘10个单元格</span></span><br><span class="line"><span class="built_in">bind</span> -r ^l resizep -R 10 <span class="comment"># 绑定Ctrl+l为往→调整面板边缘10个单元格</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># vi mode</span></span><br><span class="line">setw -g mode-keys vi</span><br><span class="line"><span class="comment"># set -g status-keys vi</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># copy to system clipboard</span></span><br><span class="line"><span class="built_in">bind</span> -T copy-mode-vi Enter send-keys -X copy-pipe-and-cancel <span class="string">&quot;xsel -i --clipboard&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 打开新窗格/窗口时保持工作目录在当前位置</span></span><br><span class="line"><span class="built_in">bind</span> c new-window -c <span class="string">&quot;#&#123;pane_current_path&#125;&quot;</span></span><br><span class="line"><span class="built_in">bind</span> % split-window -h -c <span class="string">&quot;#&#123;pane_current_path&#125;&quot;</span></span><br><span class="line"><span class="built_in">bind</span> <span class="string">&#x27;&quot;&#x27;</span> split-window -c <span class="string">&quot;#&#123;pane_current_path&#125;&quot;</span></span><br></pre></td></tr></table></figure></div>
 
 
 
 <p>参考：</p>
-<p><a class="link"   target="_blank" rel="noopener" href="https://blog.csdn.net/albertsh/article/details/107437084" >gdb调试解决找不到源代码的问题 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+<p><a class="link"   target="_blank" rel="noopener" href="https://louiszhai.github.io/2017/09/30/tmux/" >Tmux使用手册 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
 
         </div>
 
@@ -545,18 +515,18 @@
             <div class="post-copyright-info w-full my-8 px-2 sm:px-6 md:px-8">
                 <div class="article-copyright-info-container">
     <ul>
-        <li><strong>Title:</strong> gdb无源码调试</li>
+        <li><strong>Title:</strong> 个人tmux配置</li>
         <li><strong>Author:</strong> Endless_daydream</li>
         <li><strong>Created at
-                :</strong> 2024-04-06 22:44:23</li>
+                :</strong> 2024-04-06 14:42:45</li>
         
             <li>
                 <strong>Updated at
-                    :</strong> 2024-04-06 23:53:54
+                    :</strong> 2024-04-06 15:51:03
             </li>
         
         <li>
-            <strong>Link:</strong> https://endless_daydream.gitee.io/2024/04/06/gdb无源码调试/
+            <strong>Link:</strong> https://endless_daydream.gitee.io/2024/04/06/linux/个人tmux配置/
         </li>
         <li>
             <strong>
@@ -584,13 +554,13 @@
                     <div class="article-prev border-border-color shadow-redefine-flat shadow-shadow-color-2 rounded-medium px-4 py-2 hover:shadow-redefine-flat-hover hover:shadow-shadow-color-2">
                         <a class="prev"
                         rel="prev"
-                        href="/2024/04/09/ssh/"
+                        href="/2024/04/06/cpp/gdb%E6%97%A0%E6%BA%90%E7%A0%81%E8%B0%83%E8%AF%95/"
                         >
                             <span class="left arrow-icon flex justify-center items-center">
                                 <i class="fa-solid fa-chevron-left"></i>
                             </span>
                             <span class="title flex justify-center items-center">
-                                <span class="post-nav-title-item">ssh</span>
+                                <span class="post-nav-title-item">gdb无源码调试</span>
                                 <span class="post-nav-item">Prev posts</span>
                             </span>
                         </a>
@@ -600,10 +570,10 @@
                     <div class="article-next border-border-color shadow-redefine-flat shadow-shadow-color-2 rounded-medium px-4 py-2 hover:shadow-redefine-flat-hover hover:shadow-shadow-color-2">
                         <a class="next"
                         rel="next"
-                        href="/2024/04/06/%E4%B8%AA%E4%BA%BAtmux%E9%85%8D%E7%BD%AE/"
+                        href="/2024/03/22/linux/no-root-linux/"
                         >
                             <span class="title flex justify-center items-center">
-                                <span class="post-nav-title-item">个人tmux配置</span>
+                                <span class="post-nav-title-item">无root权限安装软件</span>
                                 <span class="post-nav-item">Next posts</span>
                             </span>
                             <span class="right arrow-icon flex justify-center items-center">
@@ -666,8 +636,8 @@
             <div class="post-toc-wrap">
     <div class="post-toc">
         <div class="toc-title">On this page</div>
-        <div class="page-title">gdb无源码调试</div>
-        
+        <div class="page-title">个人tmux配置</div>
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BF%AB%E6%8D%B7%E9%94%AE"><span class="nav-text">快捷键</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ssh%E8%BF%9C%E7%A8%8B%E8%BF%9E%E6%8E%A5"><span class="nav-text">ssh远程连接</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%8C%E6%95%B4%E4%B8%AA%E4%BA%BA%E9%85%8D%E7%BD%AE%E6%96%87%E6%A1%A3"><span class="nav-text">完整个人配置文档</span></a></li></ol>
 
     </div>
 </div>
@@ -700,7 +670,7 @@
                 
                 <p class="post-count space-x-0.5">
                     <span>
-                        23 posts in total
+                        25 posts in total
                     </span>
                     
                 </p>
