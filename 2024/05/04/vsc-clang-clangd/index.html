@@ -18,15 +18,15 @@
     <meta name="googlebot" content="index,follow">
     <meta name="revisit-after" content="1 days">
     
-        <meta name="description" content="环境：ubuntu22.04 clang是LLVM团队出的编译器，clangd是lsp。据说更好用，慕名而来尝试。 安装1sudo apt install clang  clangd原本也是apt安装的15版，在vscode上运行效果不好。现在是vscode先装clangd插件，然后重开vscode会提示没有clangd，通过提示安装的18版，不会自动链接到&#x2F;usr&#x2F;bin下。">
+        <meta name="description" content="环境：ubuntu22.04 clang是LLVM团队出的编译器，clangd是lsp。据说更好用，慕名而来尝试。 配置clang1sudo apt install clang  安装完成后尝试直接编译会找不到标准库，-v选项能看到clang尝试寻找的是&#x2F;usr&#x2F;include&#x2F;c++&#x2F;12: 1clang++ main.cpp -v  而现在只有&amp;#x2F">
 <meta property="og:type" content="article">
-<meta property="og:title" content="vscode clang和clangd安装记录">
+<meta property="og:title" content="vscode clang-clangd-lldb-cmake">
 <meta property="og:url" content="http://example.com/2024/05/04/vsc-clang-clangd/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="环境：ubuntu22.04 clang是LLVM团队出的编译器，clangd是lsp。据说更好用，慕名而来尝试。 安装1sudo apt install clang  clangd原本也是apt安装的15版，在vscode上运行效果不好。现在是vscode先装clangd插件，然后重开vscode会提示没有clangd，通过提示安装的18版，不会自动链接到&#x2F;usr&#x2F;bin下。">
+<meta property="og:description" content="环境：ubuntu22.04 clang是LLVM团队出的编译器，clangd是lsp。据说更好用，慕名而来尝试。 配置clang1sudo apt install clang  安装完成后尝试直接编译会找不到标准库，-v选项能看到clang尝试寻找的是&#x2F;usr&#x2F;include&#x2F;c++&#x2F;12: 1clang++ main.cpp -v  而现在只有&amp;#x2F">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2024-05-04T06:28:13.000Z">
-<meta property="article:modified_time" content="2024-05-04T06:31:06.802Z">
+<meta property="article:modified_time" content="2024-05-04T13:08:52.470Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
     
@@ -40,7 +40,7 @@
     
     <title>
         
-            vscode clang和clangd安装记录 -
+            vscode clang-clangd-lldb-cmake -
         
         Endless Daydream&#39;s Blog
     </title>
@@ -410,7 +410,7 @@
         <div class="article-title relative w-full">
             
                 <div class="w-full flex items-center pt-6 justify-start">
-                    <h1 class="article-title-regular text-second-text-color text-4xl md:text-6xl font-bold px-2 sm:px-6 md:px-8 py-3">vscode clang和clangd安装记录</h1>
+                    <h1 class="article-title-regular text-second-text-color text-4xl md:text-6xl font-bold px-2 sm:px-6 md:px-8 py-3">vscode clang-clangd-lldb-cmake</h1>
                 </div>
             
             </div>
@@ -438,8 +438,8 @@
     
         <span class="article-date article-meta-item">
             <i class="fa-regular fa-wrench"></i>&nbsp;
-            <span class="desktop">2024-05-04 14:31:06</span>
-            <span class="mobile">2024-05-04 14:31:06</span>
+            <span class="desktop">2024-05-04 21:08:52</span>
+            <span class="mobile">2024-05-04 21:08:52</span>
             <span class="hover-info">Updated</span>
         </span>
     
@@ -468,10 +468,9 @@
         <div class="article-content markdown-body px-2 sm:px-6 md:px-8 pb-8">
             <p>环境：ubuntu22.04</p>
 <p>clang是LLVM团队出的编译器，clangd是lsp。据说更好用，慕名而来尝试。</p>
-<h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><div class="highlight-container" data-rel="Sh"><figure class="iseeu highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install clang</span><br></pre></td></tr></table></figure></div>
+<h3 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h3><h4 id="clang"><a href="#clang" class="headerlink" title="clang"></a>clang</h4><div class="highlight-container" data-rel="Sh"><figure class="iseeu highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install clang</span><br></pre></td></tr></table></figure></div>
 
-<p>clangd原本也是apt安装的15版，在vscode上运行效果不好。现在是vscode先装clangd插件，然后重开vscode会提示没有clangd，通过提示安装的18版，不会自动链接到&#x2F;usr&#x2F;bin下。</p>
-<h3 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h3><h4 id="clang"><a href="#clang" class="headerlink" title="clang"></a>clang</h4><p>安装完成后尝试直接编译会找不到标准库，<code>-v</code>选项能看到clang尝试寻找的是&#x2F;usr&#x2F;include&#x2F;c++&#x2F;12:</p>
+<p>安装完成后尝试直接编译会找不到标准库，<code>-v</code>选项能看到clang尝试寻找的是&#x2F;usr&#x2F;include&#x2F;c++&#x2F;12:</p>
 <div class="highlight-container" data-rel="Sh"><figure class="iseeu highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">clang++ main.cpp -v</span><br></pre></td></tr></table></figure></div>
 
 <p>而现在只有&#x2F;usr&#x2F;include&#x2F;c++&#x2F;11目录，于是安装c++12库</p>
@@ -479,7 +478,8 @@
 
 <p>现在可以编译成功</p>
 <p><a class="link"   target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/531422156" >参考 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
-<h4 id="clangd"><a href="#clangd" class="headerlink" title="clangd"></a>clangd</h4><p>用户配置在~&#x2F;.config&#x2F;clangd&#x2F;config.yaml</p>
+<h4 id="clangd"><a href="#clangd" class="headerlink" title="clangd"></a>clangd</h4><p>clangd原本也是apt安装的15版，在vscode上运行效果不好。现在是vscode先装clangd插件，然后重开vscode会提示没有clangd，通过提示安装的18版，不会自动链接到&#x2F;usr&#x2F;bin下。</p>
+<p>用户配置在~&#x2F;.config&#x2F;clangd&#x2F;config.yaml</p>
 <p>项目配置在project&#x2F;.clangd</p>
 <h4 id="vscode"><a href="#vscode" class="headerlink" title="vscode"></a>vscode</h4><p>在网上找了一份配置，注释是原模原样的。放到setting.json文件中。</p>
 <div class="highlight-container" data-rel="Json"><figure class="iseeu highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">&quot;clangd.arguments&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">    <span class="comment">// 让 Clangd 生成更详细的日志</span></span><br><span class="line">    <span class="string">&quot;--log=verbose&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="comment">// 输出的 JSON 文件更美观</span></span><br><span class="line">    <span class="string">&quot;--pretty&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="comment">// 全局补全(输入时弹出的建议将会提供 CMakeLists.txt 里配置的所有文件中可能的符号，会自动补充头文件)</span></span><br><span class="line">    <span class="string">&quot;--all-scopes-completion&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="comment">// &quot;--query-driver=/usr/bin/gcc*&quot;,</span></span><br><span class="line">    <span class="comment">// &quot;--query-driver=/usr/bin/g++*&quot;,</span></span><br><span class="line">    <span class="string">&quot;--query-driver=/usr/bin/clang++*&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="comment">// 建议风格：打包(重载函数只会给出一个建议）</span></span><br><span class="line">    <span class="comment">// 相反可以设置为detailed</span></span><br><span class="line">    <span class="string">&quot;--completion-style=bundled&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="comment">// 跨文件重命名变量</span></span><br><span class="line">    <span class="string">&quot;--cross-file-rename&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="comment">// 允许补充头文件</span></span><br><span class="line">    <span class="string">&quot;--header-insertion=iwyu&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="comment">// 输入建议中，已包含头文件的项与还未包含头文件的项会以圆点加以区分</span></span><br><span class="line">    <span class="string">&quot;--header-insertion-decorators&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="comment">// 在后台自动分析文件(基于 complie_commands，我们用CMake生成)</span></span><br><span class="line">    <span class="string">&quot;--background-index&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="comment">// 启用 Clang-Tidy 以提供「静态检查」</span></span><br><span class="line">    <span class="string">&quot;--clang-tidy&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="comment">// Clang-Tidy 静态检查的参数，指出按照哪些规则进行静态检查，详情见「与按照官方文档配置好的 VSCode 相比拥有的优势」</span></span><br><span class="line">    <span class="comment">// 参数后部分的*表示通配符</span></span><br><span class="line">    <span class="comment">// 在参数前加入-，如-modernize-use-trailing-return-type，将会禁用某一规则</span></span><br><span class="line">    <span class="string">&quot;--clang-tidy-checks=cppcoreguidelines-*,performance-*,bugprone-*,portability-*,modernize-*,google-*&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="comment">// 默认格式化风格: 谷歌开源项目代码指南</span></span><br><span class="line">    <span class="comment">// &quot;--fallback-style=file&quot;,</span></span><br><span class="line">    <span class="comment">// 同时开启的任务数量</span></span><br><span class="line">    <span class="string">&quot;-j=2&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="comment">// pch优化的位置(memory 或 disk，选择memory会增加内存开销，但会提升性能) 推荐在板子上使用disk</span></span><br><span class="line">    <span class="string">&quot;--pch-storage=disk&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="comment">// 启用这项时，补全函数时，将会给参数提供占位符，键入后按 Tab 可以切换到下一占位符，乃至函数末</span></span><br><span class="line">    <span class="comment">// 我选择禁用</span></span><br><span class="line">    <span class="string">&quot;--function-arg-placeholders=false&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="comment">// compelie_commands.json 文件的目录位置(相对于工作区，由于 CMake 生成的该文件默认在 build 文件夹中，故设置为 build)</span></span><br><span class="line">    <span class="string">&quot;--compile-commands-dir=build&quot;</span></span><br><span class="line"><span class="punctuation">]</span><span class="punctuation">,</span></span><br></pre></td></tr></table></figure></div>
@@ -490,10 +490,23 @@
 <p>现在是配在vscode的setting.json，理论上也可以把配置写到用户clangd配置。</p>
 <div class="highlight-container" data-rel="Yaml"><figure class="iseeu highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">---</span></span><br><span class="line"><span class="attr">CompileFlags:</span></span><br><span class="line">  <span class="attr">Add:</span> </span><br><span class="line">    <span class="bullet">-</span> <span class="string">&quot;-isystem&quot;</span></span><br><span class="line">    <span class="bullet">-</span> <span class="string">&quot;/usr/include/c++/12&quot;</span></span><br></pre></td></tr></table></figure></div>
 
+<p>这部分仍有问题请看<a class="link"   target="_blank" rel="noopener" href="https://clangd.llvm.org/guides/system-headers" >官方文档 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
 <h4 id="cmake"><a href="#cmake" class="headerlink" title="cmake"></a>cmake</h4><div class="highlight-container" data-rel="Cmake"><figure class="iseeu highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">set</span>(CMAKE_EXPORT_COMPILE_COMMANDS <span class="keyword">ON</span>)</span><br></pre></td></tr></table></figure></div>
 
 <p>加上这条，运行cmake会生成compile_commands.json，可以打开看看里面就是编译指令。clangd也会根据这个来找inlcude目录，这样项目内的头文件就能被找到</p>
+<h3 id="lldb"><a href="#lldb" class="headerlink" title="lldb"></a>lldb</h3><div class="highlight-container" data-rel="Sh"><figure class="iseeu highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install lldb</span><br></pre></td></tr></table></figure></div>
+
+<p>vscode安装插件CodeLLDB</p>
+<p>根据cmake-tools官方仓库的说明，只有cpptools内置的debugger可以快速启动(ctrl+f5)，也就是使用下方的小虫子按钮，其他调试器都要通过配置launch.json，按f5来启动</p>
+<p>参考<a class="link"   target="_blank" rel="noopener" href="https://github.com/microsoft/vscode-cmake-tools/blob/main/docs/debug-launch.md" >官方仓库的markdown <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a>，lldb的launch.json配置如下:</p>
+<p>lldb-mi被移出lldb项目了，需要自己从github拉下来编译。</p>
+<div class="highlight-container" data-rel="Json"><figure class="iseeu highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;version&quot;</span><span class="punctuation">:</span> <span class="string">&quot;0.2.0&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;configurations&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">        <span class="punctuation">&#123;</span></span><br><span class="line">            <span class="attr">&quot;name&quot;</span><span class="punctuation">:</span> <span class="string">&quot;(lldb) Launch&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;type&quot;</span><span class="punctuation">:</span> <span class="string">&quot;cppdbg&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;request&quot;</span><span class="punctuation">:</span> <span class="string">&quot;launch&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="comment">// Resolved by CMake Tools:</span></span><br><span class="line">            <span class="attr">&quot;program&quot;</span><span class="punctuation">:</span> <span class="string">&quot;$&#123;command:cmake.launchTargetPath&#125;&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;args&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span><span class="punctuation">]</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;stopAtEntry&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">false</span></span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;cwd&quot;</span><span class="punctuation">:</span> <span class="string">&quot;$&#123;workspaceFolder&#125;&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;miDebuggerPath&quot;</span><span class="punctuation">:</span> <span class="string">&quot;/usr/bin/lldb-mi&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;environment&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">                <span class="punctuation">&#123;</span></span><br><span class="line">                    <span class="comment">// add the directory where our target was built to the PATHs</span></span><br><span class="line">                    <span class="comment">// it gets resolved by CMake Tools:</span></span><br><span class="line">                    <span class="attr">&quot;name&quot;</span><span class="punctuation">:</span> <span class="string">&quot;PATH&quot;</span><span class="punctuation">,</span></span><br><span class="line">                    <span class="attr">&quot;value&quot;</span><span class="punctuation">:</span> <span class="string">&quot;$&#123;env:PATH&#125;:$&#123;command:cmake.getLaunchTargetDirectory&#125;&quot;</span></span><br><span class="line">                <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">                <span class="punctuation">&#123;</span></span><br><span class="line">                    <span class="attr">&quot;name&quot;</span><span class="punctuation">:</span> <span class="string">&quot;OTHER_VALUE&quot;</span><span class="punctuation">,</span></span><br><span class="line">                    <span class="attr">&quot;value&quot;</span><span class="punctuation">:</span> <span class="string">&quot;Something something&quot;</span></span><br><span class="line">                <span class="punctuation">&#125;</span></span><br><span class="line">            <span class="punctuation">]</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;externalConsole&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">true</span></span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;MIMode&quot;</span><span class="punctuation">:</span> <span class="string">&quot;lldb&quot;</span></span><br><span class="line">        <span class="punctuation">&#125;</span></span><br><span class="line">    <span class="punctuation">]</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure></div>
+
+<p>参考<a class="link"   target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_45896211/article/details/135310728" >这篇博客 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
 <h4 id="其他问题"><a href="#其他问题" class="headerlink" title="其他问题"></a>其他问题</h4><p>第一次重启vscode clangd没找到第三方库Eigen和fmt，但理论上compile_commands.json中有它们的路径，现在没有复现这个问题。</p>
+<p>参考：</p>
+<p><a class="link"   target="_blank" rel="noopener" href="https://blog.csdn.net/GeomasterYi/article/details/131216841" >1 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+<p><a class="link"   target="_blank" rel="noopener" href="https://juejin.cn/post/7275971781985452047" >2 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
 
         </div>
 
@@ -501,14 +514,14 @@
             <div class="post-copyright-info w-full my-8 px-2 sm:px-6 md:px-8">
                 <div class="article-copyright-info-container">
     <ul>
-        <li><strong>Title:</strong> vscode clang和clangd安装记录</li>
+        <li><strong>Title:</strong> vscode clang-clangd-lldb-cmake</li>
         <li><strong>Author:</strong> Endless_daydream</li>
         <li><strong>Created at
                 :</strong> 2024-05-04 14:28:13</li>
         
             <li>
                 <strong>Updated at
-                    :</strong> 2024-05-04 14:31:06
+                    :</strong> 2024-05-04 21:08:52
             </li>
         
         <li>
@@ -607,8 +620,8 @@
             <div class="post-toc-wrap">
     <div class="post-toc">
         <div class="toc-title">On this page</div>
-        <div class="page-title">vscode clang和clangd安装记录</div>
-        <ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%89%E8%A3%85"><span class="nav-text">安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%85%8D%E7%BD%AE"><span class="nav-text">配置</span></a></li></ol>
+        <div class="page-title">vscode clang-clangd-lldb-cmake</div>
+        <ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%85%8D%E7%BD%AE"><span class="nav-text">配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#lldb"><span class="nav-text">lldb</span></a></li></ol>
 
     </div>
 </div>

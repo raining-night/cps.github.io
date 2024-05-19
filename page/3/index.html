@@ -756,9 +756,10 @@ gc 注释，如gcc&#x2F;gcl注释一行gC 注释多行，c语言是前后加&#x2
 
                     <div class="home-article-content markdown-body">
                         
-                            演示交换大写锁定键caps_lock和esc。
-Linux: 使用xmodmap参考 
-xmodmap修改keycode到keysyms的映射关系。keycode对应编码物理按键，keysyms是按键翻译成什么功能。参考Linux下的keycode与...
+                            2024.5.20 更新：改用setxkbmap，封装了各种键映射和交换的命令
+setxkbmap 修改键位1setxkbmap -option caps:swapescape -option ctrl:swap_lalt_lctl
+
+交换capsL...
                         
                     </div>
 
