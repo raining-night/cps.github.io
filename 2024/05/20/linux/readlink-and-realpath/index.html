@@ -13,17 +13,22 @@
     
     <!--- Seo Part-->
     
-    <link rel="canonical" href="http://example.com/tags/记录/"/>
+    <link rel="canonical" href="http://example.com/2024/05/20/linux/readlink-and-realpath/"/>
     <meta name="robots" content="index,follow">
     <meta name="googlebot" content="index,follow">
     <meta name="revisit-after" content="1 days">
     
-        <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://example.com/tags/%E8%AE%B0%E5%BD%95/index.html">
+        <meta name="description" content="linux命令readlink和realpath都是解析软链接，获得绝对路径的命令。 realpath会递归地解析直到不是软链接。 readlink默认只解析一层，使用-f选项则递归地解析，与realpath相同。 realpath --help: 12345678910111213141516用法：realpath [选项]... 文件...打印经过解析的绝对路径文件名；除最后一部分外，文件名的">
+<meta property="og:type" content="article">
+<meta property="og:title" content="readlink和realpath命令">
+<meta property="og:url" content="http://example.com/2024/05/20/linux/readlink-and-realpath/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="linux命令readlink和realpath都是解析软链接，获得绝对路径的命令。 realpath会递归地解析直到不是软链接。 readlink默认只解析一层，使用-f选项则递归地解析，与realpath相同。 realpath --help: 12345678910111213141516用法：realpath [选项]... 文件...打印经过解析的绝对路径文件名；除最后一部分外，文件名的">
 <meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2024-05-20T09:22:58.000Z">
+<meta property="article:modified_time" content="2024-05-20T09:27:36.588Z">
 <meta property="article:author" content="John Doe">
+<meta property="article:tag" content="linux">
 <meta name="twitter:card" content="summary">
     
     
@@ -36,7 +41,7 @@
     
     <title>
         
-            Tag: 记录 -
+            readlink和realpath命令 -
         
         Endless Daydream&#39;s Blog
     </title>
@@ -400,46 +405,240 @@
             <div class="main-content">
 
                 
-                    <div class="tag-container">
-	<div class="tag-name">
-		<i class="fa-solid fa-tag"></i>&nbsp;记录
-	</div>
-	<div class="tag-post-list">
-		
+                    <div class="post-page-container flex relative justify-between box-border w-full h-full">
+    <div class="article-content-container">
 
-<div class="archive-list-container">
-    
-        <section class="archive-item mb-spacing-unit last:mb-0">
-            <div class="archive-item-header flex flex-row items-center mb-2">
-                <span class="archive-year font-semibold text-3xl mr-2">2024</span>
-                <span class="archive-year-post-count text-xs md:text-sm font-bold rounded-small bg-third-background-color py-[2px] px-[10px] border border-border-color">1</span>
+        <div class="article-title relative w-full">
+            
+                <div class="w-full flex items-center pt-6 justify-start">
+                    <h1 class="article-title-regular text-second-text-color text-4xl md:text-6xl font-bold px-2 sm:px-6 md:px-8 py-3">readlink和realpath命令</h1>
+                </div>
+            
             </div>
-            <ul class="article-list pl-0 md:pl-8 text-lg leading-[1.5]">
-              
+
+        
+            <div class="article-header flex flex-row gap-2 items-center px-2 sm:px-6 md:px-8">
+                <div class="avatar w-[46px] h-[46px] flex-shrink-0 rounded-medium border border-border-color p-[1px]">
+                    <img src="/images/redefine-avatar.svg">
+                </div>
+                <div class="info flex flex-col justify-between">
+                    <div class="author flex items-center">
+                        <span class="name text-default-text-color text-lg font-semibold">Endless_daydream</span>
+                        
+                            <span class="author-label ml-1.5 text-xs px-2 py-0.5 rounded-small text-third-text-color border border-shadow-color-1">Lv3</span>
+                        
+                    </div>
+                    <div class="meta-info">
+                        <div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fa-regular fa-pen-fancy"></i>&nbsp;
+        <span class="desktop">2024-05-20 17:22:58</span>
+        <span class="mobile">2024-05-20 17:22:58</span>
+        <span class="hover-info">Created</span>
+    </span>
+    
+        <span class="article-date article-meta-item">
+            <i class="fa-regular fa-wrench"></i>&nbsp;
+            <span class="desktop">2024-05-20 17:27:36</span>
+            <span class="mobile">2024-05-20 17:27:36</span>
+            <span class="hover-info">Updated</span>
+        </span>
+    
+
+    
+    
+        <span class="article-tags article-meta-item">
+            <i class="fa-regular fa-tags"></i>&nbsp;
+            <ul>
                 
-                    
-                    <li class="article-item space-y-2 px-6 pt-10 pb-2 text-xl relative border-l-2 border-border-color" date-is='03-02'>
+                    <li>
+                        <a href="/tags/linux/">linux</a>&nbsp;
+                    </li>
                 
-                    
-                        <a href="/2024/03/02/blog/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E8%AE%B0%E5%BD%95/" class="block overflow-hidden w-fit">
-                            <span class="article-title mb-0.5 text-2xl">博客搭建记录</span>
-                        </a>
-                    
-              
             </ul>
-        </section>
+        </span>
+    
+
+    
+    
+    
+    
+        <span class="article-pv article-meta-item">
+            <i class="fa-regular fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>
+        </span>
     
 </div>
 
-	</div>
+                    </div>
+                </div>
+            </div>
+        
+
+        
+
+
+        <div class="article-content markdown-body px-2 sm:px-6 md:px-8 pb-8">
+            <p>linux命令readlink和realpath都是解析软链接，获得绝对路径的命令。</p>
+<p>realpath会递归地解析直到不是软链接。</p>
+<p>readlink默认只解析一层，使用-f选项则递归地解析，与realpath相同。</p>
+<p><code>realpath --help</code>:</p>
+<div class="highlight-container" data-rel="Txt"><figure class="iseeu highlight txt"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">用法：realpath [选项]... 文件...</span><br><span class="line">打印经过解析的绝对路径文件名；</span><br><span class="line">除最后一部分外，文件名的所有组成部分必须存在</span><br><span class="line"></span><br><span class="line">  -e, --canonicalize-existing  all components of the path must exist</span><br><span class="line">  -m, --canonicalize-missing   no path components need exist or be a directory</span><br><span class="line">  -L, --logical                resolve &#x27;..&#x27; components before symlinks</span><br><span class="line">  -P, --physical               resolve symlinks as encountered (default)</span><br><span class="line">  -q, --quiet                  suppress most error messages</span><br><span class="line">      --relative-to=DIR        print the resolved path relative to DIR</span><br><span class="line">      --relative-base=DIR      print absolute paths unless paths below DIR</span><br><span class="line">  -s, --strip, --no-symlinks   don&#x27;t expand symlinks</span><br><span class="line">  -z, --zero                   end each output line with NUL, not newline</span><br><span class="line"></span><br><span class="line">      --help  显示此帮助信息并退出</span><br><span class="line">      --version  显示版本信息并退出</span><br></pre></td></tr></table></figure></div>
+
+<p><code>readlink --help</code>:</p>
+<div class="highlight-container" data-rel="Txt"><figure class="iseeu highlight txt"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">用法：readlink [选项]... 文件...</span><br><span class="line">输出符号链接值或规范文件名。</span><br><span class="line"></span><br><span class="line">  -f, --canonicalize  递归的跟随给定文件名的所有符号链接以规范化，</span><br><span class="line">    除最后一个外所有组件必须存在</span><br><span class="line">  -e, --canonicalize-existing 递归跟随给定文件名的所有符号链接以规范化，</span><br><span class="line">    所有组件都必须存在</span><br><span class="line">  -m, --canonicalize-missing    通过递归地跟随指定文件名的各个组成部分的</span><br><span class="line">                                符号链接来规范化文件名，</span><br><span class="line">                                但不对各个组成部分的存在性作出要求</span><br><span class="line">  -n, --no-newline              不输出末尾的换行符</span><br><span class="line">  -q, --quiet</span><br><span class="line">  -s, --silent                  不输出大多数的错误消息（默认启用）</span><br><span class="line">  -v, --verbose                 报告错误消息</span><br><span class="line">  -z, --zero                    以 NUL 字符而非换行符结束每个输出行</span><br><span class="line">      --help  显示此帮助信息并退出</span><br><span class="line">      --version  显示版本信息并退出</span><br></pre></td></tr></table></figure></div>
+
+<p>可以看出两者选项相近，功能基本重合。</p>
+<p>对于<strong>除最后一个外所有组件必须存在</strong>的解释：</p>
+<p>这句话的意思是指向的文件可以不存在，但其上级目录必须存在。用一个例子说明：</p>
+<p>假设有目录如下:</p>
+<div class="highlight-container" data-rel="Sh"><figure class="iseeu highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">/home/user/</span><br><span class="line">├── existing_directory/</span><br><span class="line">│   └── existing_file.txt</span><br><span class="line">└── non_existing_directory/</span><br></pre></td></tr></table></figure></div>
+
+<p><code>realpath existing_directory/existing_file.txt</code>，命令会<strong>成功</strong>并输出 <code>/home/user/existing_directory/existing_file.txt</code>，因为路径中的所有部分都存在。<br><code>realpath non_existing_directory/new_file.txt</code>，命令会<strong>失败</strong>并报错，因为 <code>non_existing_directory</code> 这个目录不存在。<br><code>realpath existing_directory/new_file.txt</code>，命令会<strong>成功</strong>并输出 <code>/home/user/existing_directory/new_file.txt</code> ，尽管 new_file.txt 这个文件不存在，但 existing_directory 目录是存在的。 这就是’除最后一个外所有组件必须存在’的情况。</p>
+
+        </div>
+
+        
+            <div class="post-copyright-info w-full my-8 px-2 sm:px-6 md:px-8">
+                <div class="article-copyright-info-container">
+    <ul>
+        <li><strong>Title:</strong> readlink和realpath命令</li>
+        <li><strong>Author:</strong> Endless_daydream</li>
+        <li><strong>Created at
+                :</strong> 2024-05-20 17:22:58</li>
+        
+            <li>
+                <strong>Updated at
+                    :</strong> 2024-05-20 17:27:36
+            </li>
+        
+        <li>
+            <strong>Link:</strong> https://endless_daydream.gitee.io/2024/05/20/linux/readlink-and-realpath/
+        </li>
+        <li>
+            <strong>
+                License:
+            </strong>
+            
+
+            
+                This work is licensed under <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0">CC BY-NC-SA 4.0</a>.
+            
+        </li>
+    </ul>
 </div>
 
-<div class="tag-paginator">
-	<div class="paginator">
-    <span class="page-number current">1</span>
+            </div>
+        
+
+        
+            <ul class="post-tags-box text-lg mt-1.5 flex-wrap justify-center flex md:hidden">
+                
+                    <li class="tag-item mx-0.5">
+                        <a href="/tags/linux/">#linux</a>&nbsp;
+                    </li>
+                
+            </ul>
+        
+
+        
+
+        
+            <div class="article-nav my-8 flex justify-between items-center px-2 sm:px-6 md:px-8">
+                
+                    <div class="article-prev border-border-color shadow-redefine-flat shadow-shadow-color-2 rounded-medium px-4 py-2 hover:shadow-redefine-flat-hover hover:shadow-shadow-color-2">
+                        <a class="prev"
+                        rel="prev"
+                        href="/2024/05/20/linux/fzf-zsh/"
+                        >
+                            <span class="left arrow-icon flex justify-center items-center">
+                                <i class="fa-solid fa-chevron-left"></i>
+                            </span>
+                            <span class="title flex justify-center items-center">
+                                <span class="post-nav-title-item">fzf-zsh</span>
+                                <span class="post-nav-item">Prev posts</span>
+                            </span>
+                        </a>
+                    </div>
+                
+                
+                    <div class="article-next border-border-color shadow-redefine-flat shadow-shadow-color-2 rounded-medium px-4 py-2 hover:shadow-redefine-flat-hover hover:shadow-shadow-color-2">
+                        <a class="next"
+                        rel="next"
+                        href="/2024/05/04/vsc-clang-clangd/"
+                        >
+                            <span class="title flex justify-center items-center">
+                                <span class="post-nav-title-item">vscode clang-clangd-lldb-cmake</span>
+                                <span class="post-nav-item">Next posts</span>
+                            </span>
+                            <span class="right arrow-icon flex justify-center items-center">
+                                <i class="fa-solid fa-chevron-right"></i>
+                            </span>
+                        </a>
+                    </div>
+                
+            </div>
+        
+
+
+        
+            <div class="comment-container px-2 sm:px-6 md:px-8 pb-8">
+                <div class="comments-container mt-10 w-full ">
+    <div id="comment-anchor" class="w-full h-2.5"></div>
+    <div class="comment-area-title w-full my-1.5 md:my-2.5 text-xl md:text-3xl font-bold">
+        Comments
+    </div>
+    
+
+        
+            
+    <div id="waline"></div>
+    <script type="module" data-swup-reload-script>
+      import { init } from '/js/libs/waline.mjs';
+
+      function loadWaline() {
+        init({
+          el: '#waline',
+          serverURL: 'https://example.example.com',
+          lang: 'zh-CN',
+          dark: 'body[class~="dark-mode"]',
+          requiredMeta: ['nick', 'mail'],
+          emoji: [],
+          recaptchaV3Key: "wasd",
+          
+        });
+      }
+
+      if (typeof swup !== 'undefined') {
+        loadWaline();
+      } else {
+        window.addEventListener('DOMContentLoaded', loadWaline);
+      }
+    </script>
+
+
+
+        
+    
 </div>
 
+            </div>
+        
+    </div>
+
+    
+        <div class="toc-content-container">
+            <div class="post-toc-wrap">
+    <div class="post-toc">
+        <div class="toc-title">On this page</div>
+        <div class="page-title">readlink和realpath命令</div>
+        
+
+    </div>
 </div>
+        </div>
+    
+</div>
+
 
 
                 
@@ -522,6 +721,27 @@
         </div>
     </div>
 
+    
+        <div class="post-tools">
+            <div class="post-tools-container">
+    <ul class="article-tools-list">
+        <!-- TOC aside toggle -->
+        
+            <li class="right-bottom-tools page-aside-toggle">
+                <i class="fa-regular fa-outdent"></i>
+            </li>
+        
+
+        <!-- go comment -->
+        
+            <li class="go-comment">
+                <i class="fa-regular fa-comments"></i>
+            </li>
+        
+    </ul>
+</div>
+
+        </div>
     
 
     <div class="right-side-tools-container">

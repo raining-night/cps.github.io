@@ -427,7 +427,7 @@
 
         <div class="statistics flex justify-around my-2.5">
     <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/tags">
-        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">5</div>
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">6</div>
         <div class="label text-third-text-color text-sm">Tags</div>
     </a>
     <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/categories">
@@ -435,7 +435,7 @@
         <div class="label text-third-text-color text-sm">Categories</div>
     </a>
     <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/archives">
-        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">25</div>
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">27</div>
         <div class="label text-third-text-color text-sm">Posts</div>
     </a>
 </div>
@@ -496,7 +496,7 @@
 </div>
                 <div class="statistics flex justify-around my-2.5">
     <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/tags">
-        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">5</div>
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">6</div>
         <div class="label text-third-text-color text-sm">Tags</div>
     </a>
     <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/categories">
@@ -504,7 +504,7 @@
         <div class="label text-third-text-color text-sm">Categories</div>
     </a>
     <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/archives">
-        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">25</div>
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">27</div>
         <div class="label text-third-text-color text-sm">Posts</div>
     </a>
 </div>
@@ -521,6 +521,104 @@
                 
                     <div class="home-content-container">
     <ul class="home-article-list">
+        
+            <li class="home-article-item">
+
+                
+
+                
+
+                
+                <div class="flex flex-col gap-5 px-7 pb-7 pt-7">
+                    <h3 class="home-article-title">
+                        <a href="/2024/05/20/linux/fzf-zsh/">
+                            fzf-zsh
+                        </a>
+                    </h3>
+
+                    <div class="home-article-content markdown-body">
+                        
+                            ubuntu 22.04
+1sudo apt install fzf
+
+apt安装后发现没有自动修改终端Ctrl-R和Ctrl-T快捷键，github上生成脚本的命令fzf --zsh提示选项不存在，询问chatGPT得解。
+1cat /usr/sh...
+                        
+                    </div>
+
+                    <div class="home-article-meta-info-container">
+    <div class="home-article-meta-info">
+        <span><i class="fa-solid fa-calendars"></i>&nbsp;
+            <span class="home-article-date" data-date="Mon May 20 2024 18:57:09 GMT+0800">
+                
+                    2024-05-20
+                
+            </span>
+        </span>
+        
+        
+    </div>
+
+    <a href="/2024/05/20/linux/fzf-zsh/">Read more<span class="seo-reader-text">fzf-zsh</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
+</div>
+
+                </div>
+            </li>
+        
+            <li class="home-article-item">
+
+                
+
+                
+
+                
+                <div class="flex flex-col gap-5 px-7 pb-7 pt-7">
+                    <h3 class="home-article-title">
+                        <a href="/2024/05/20/linux/readlink-and-realpath/">
+                            readlink和realpath命令
+                        </a>
+                    </h3>
+
+                    <div class="home-article-content markdown-body">
+                        
+                            linux命令readlink和realpath都是解析软链接，获得绝对路径的命令。
+realpath会递归地解析直到不是软链接。
+readlink默认只解析一层，使用-f选项则递归地解析，与realpath相同。
+realpath --help:
+...
+                        
+                    </div>
+
+                    <div class="home-article-meta-info-container">
+    <div class="home-article-meta-info">
+        <span><i class="fa-solid fa-calendars"></i>&nbsp;
+            <span class="home-article-date" data-date="Mon May 20 2024 17:22:58 GMT+0800">
+                
+                    2024-05-20
+                
+            </span>
+        </span>
+        
+        
+            <span class="home-article-tag">
+                <i class="fa-solid fa-tags"></i>&nbsp;
+                <ul>
+                    
+                        <li>
+                            
+                            <a href="/tags/linux/">linux</a>&nbsp;
+                        </li>
+                    
+                </ul>
+            </span>
+        
+    </div>
+
+    <a href="/2024/05/20/linux/readlink-and-realpath/">Read more<span class="seo-reader-text">readlink和realpath命令</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
+</div>
+
+                </div>
+            </li>
         
             <li class="home-article-item">
 
@@ -881,117 +979,6 @@ r
                 </div>
             </li>
         
-            <li class="home-article-item">
-
-                
-
-                
-
-                
-                <div class="flex flex-col gap-5 px-7 pb-7 pt-7">
-                    <h3 class="home-article-title">
-                        <a href="/2024/03/21/linux/tmux%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/">
-                            tmux常用命令
-                        </a>
-                    </h3>
-
-                    <div class="home-article-content markdown-body">
-                        
-                            基本思想工作流
-服务server &gt; 会话session &gt; 窗口window &gt; 窗格pane
-首次使用tmux命令会启动一个server，之后所有工作都是和这个server交流。
-窗口window是一个tab页面，这个页面可以分...
-                        
-                    </div>
-
-                    <div class="home-article-meta-info-container">
-    <div class="home-article-meta-info">
-        <span><i class="fa-solid fa-calendars"></i>&nbsp;
-            <span class="home-article-date" data-date="Thu Mar 21 2024 21:55:16 GMT+0800">
-                
-                    2024-03-21
-                
-            </span>
-        </span>
-        
-        
-    </div>
-
-    <a href="/2024/03/21/linux/tmux%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/">Read more<span class="seo-reader-text">tmux常用命令</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
-</div>
-
-                </div>
-            </li>
-        
-            <li class="home-article-item">
-
-                
-
-                
-
-                
-                <div class="flex flex-col gap-5 px-7 pb-7 pt-7">
-                    <h3 class="home-article-title">
-                        <a href="/2024/03/15/cpp/%E5%8E%9F%E7%A0%81%E5%8F%8D%E7%A0%81%E8%A1%A5%E7%A0%81/">
-                            原码反码补码
-                        </a>
-                    </h3>
-
-                    <div class="home-article-content markdown-body">
-                        
-                            整数表示法
-
-
-
-正数
-负数
-
-
-
-真值
-6
--6
-
-
-原码
-0 000 0110
-1 000 0110
-
-
-反码
-0 000 0110
-1 111 1001
-
-
-补码
-0 000 0110
-1 111 1010
-
-
-正数的表示相同，区别在负数上：
-...
-                        
-                    </div>
-
-                    <div class="home-article-meta-info-container">
-    <div class="home-article-meta-info">
-        <span><i class="fa-solid fa-calendars"></i>&nbsp;
-            <span class="home-article-date" data-date="Fri Mar 15 2024 11:53:26 GMT+0800">
-                
-                    2024-03-15
-                
-            </span>
-        </span>
-        
-        
-    </div>
-
-    <a href="/2024/03/15/cpp/%E5%8E%9F%E7%A0%81%E5%8F%8D%E7%A0%81%E8%A1%A5%E7%A0%81/">Read more<span class="seo-reader-text">原码反码补码</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
-</div>
-
-                </div>
-            </li>
-        
     </ul>
 
     <div class="home-paginator px-7 py-5">
@@ -1026,7 +1013,7 @@ r
                 
                 <p class="post-count space-x-0.5">
                     <span>
-                        25 posts in total
+                        27 posts in total
                     </span>
                     
                 </p>
